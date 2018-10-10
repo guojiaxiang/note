@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+     * 定时器：
+     * 定义：时间到了之后执行某一个方法  参数 ：执行的函数此处函数为定义函数  单位 ：毫秒  ms
+     * 1、setTimeout  时间到了只执行一个这个方法
+     * 2、setInterval  时间到了执行这个方法，再次不断循环往复执行
+     *   - clearInterval ：清除定时器 都可以清除
+     *   - clearTimeout ：清除定时器 都可以清除
+     * 返回值：表示设置的第几个定时器
+     * 注意：定时器都是异步执行
+     * */
+    var mun1 = setTimeout(function () {
+//        alert("123456")
+    }, 1000)
+    var n = 1
+    var mun2 = setInterval(function () {
+        n++;
+        console.log(n);
+        if (n>5) {
+//            clearInterval(mun2)
+            clearTimeout(mun2)
+        }
+    }, 1000)
+    //返回值
+    console.log(mun1);
+    console.log(mun2);
+</script>

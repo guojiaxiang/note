@@ -1,0 +1,66 @@
+html {
+    font-size: 100px;
+}
+
+nav {
+}
+
+nav ul li {
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+
+nav ul li a img {
+    width: .34rem;
+    height: .34rem;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul li a p {
+    font-size: .12rem;
+    color: grey;
+    line-height: .2rem;
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 117.1875px;
+    }
+
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 129.375px;
+    }
+
+}
+
+.banner ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    border-right: .01rem solid grey;
+    border-top: .01rem solid grey;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 1rem;
+
+}
+
+.banner ul li a h5 {
+    font-size: .14rem
+}
+
+.banner ul li a p {
+    font-size: .12rem
+}
+
+.banner ul li a img {
+    width: .55rem;
+    height: .55rem;
+    display: block;
+    margin: 0 auto;
+}

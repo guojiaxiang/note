@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 480px;
+            height: 320px;
+            margin: 1000px auto;
+            background: url("img/loading1.gif") no-repeat center center;
+            background-size: cover;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/222.png" alt="这是一张图">
+</div>
+</body>
+</html>
+
+<script>
+    /*
+    * 延迟加载：又名懒加载，在性能优化中非常重要的一个环节，多用于图片较大的网站
+    *过程：当浏览器滑动到当前图片的时候，我们在准备去请求数据和展示图片，在展示图片的时候我们需要先创建一个临时的图片
+    * 去试加载，一旦加载成功则将正确的地址返回给真实的标签元素；【如果img图片加载失败，页面上会有加载失败的裂图，是非常不友好的】
+    *
+    * */
+    //1.计算滚动条滑到这一块的距离
+    let winH=utils.win('clientHeight')
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Parent() {
+        this.aaa = 1;
+        this.age = 2;
+        //name 和 age都是Parent的私有属性
+    }
+    //Parent();
+    function Child() {
+        Parent.call(this);//相当于在Child当中添加Parent中this的两个属性
+
+        this.aaa = 3;//属性名会被重写
+        this.age = 4;
+        //call继承需要写在开头，再给它添加私有属性不会被重写
+    }
+    var ll = new Child();
+    console.log('aaa' in ll);
+    console.log('age' in ll);
+</script>

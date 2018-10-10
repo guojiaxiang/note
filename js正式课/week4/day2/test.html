@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    /*  console.log(1);
+     var time=new Date();
+     for(var i=0;i<1000000000;i++){}
+     console.log(new Date() - time);
+     console.log(2);*/
+    /*function each(obj,callback) {
+     if('length' in obj){
+     for(var i=0;i<obj.length;i++){
+     var cur= callback&&callback(obj[i],i,obj[i]);
+     if(cur===false){
+     break
+     }
+     }
+     }else {
+     for(var key in obj){
+     var cur=callback&&callback.call(obj[key],key,obj[key]);
+     if(cur===false){
+     break
+     }
+     }
+     }
+     each([1,2,3,4],function (index,item) {
+     console.log(this);
+     //如果当前函数return false，结束循环
+     })*/
+    /*//固定步长的动画  //!*var box=document.getElementById('box');
+     var step=0;
+     var boxW=box.offsetWidth;
+     var winW=utils.win('clientWidth');
+     var target=winW-boxW;
+     box.onclick=function () {
+     this.timer=setInterval(()=> {
+     step+=33;
+     if(step>=target){
+     console.log(step);
+     console.log(target);
+     clearInterval(this.timer);
+     utils.css(this,'left',target);
+     return
+     //step=target;
+
+     }
+     utils.css(this,'left',step)
+     },1700)
+     } */
+  /* //固定时间的动画//
+    var box = document.getElementById('box');
+    var duration = 3000;
+    var winW = utils.win('clientWidth');
+    var target01 = winW - box.offsetWidth;
+    var winH = utils.win('clientHeight');
+    var target02 = winH ;
+    var timer01 = 0;
+    var timer02 = 0;
+    var speed01 = target01 / duration;
+    var speed02 = target02 / duration;
+    box.onclick = function () {
+        this.timer01 = setInterval(() => {
+            timer01 += 30;
+            if (timer01 >= duration) {
+                clearInterval(this.timer01);
+                utils.css(this, 'left', target01);
+                return
+            }
+            utils.css(this, 'left', speed01 * timer01)
+        }, 17);
+        //console.log(1)
+        this.timer02 = setInterval(() => {
+           // console.log(1);
+            timer02 += 30;
+           // console.log(1);
+            if (timer02 >= duration) {
+                //console.log(target02);
+                //console.log(speed02 * timer02);
+                clearInterval(this.timer02);
+                utils.css(this, 'height', target02);
+                //console.log(1);
+                return
+                //target02=speed02 * timer02;
+            }
+            utils.css(this, 'height', speed02 * timer02);
+        }, 17)
+    }*/
+/*    //固定时间的匀速直线运动
+    //t b c d
+    //t:timer 表示运动的时间
+    // b：begin 表示开始的位置【不一定为0】
+    // c：change 表示要运动的距离【终点-开始的距离】【target-begin】
+    // d：duration 表示花费的时间
+
+    let linear = function (time, begin, change, duration) {
+        return time / duration * change + begin;
+    };
+    let time = 0;
+    let duration = 2000;
+    let begin = box.offsetLeft;
+    let target = utils.win('clientWidth') - box.offsetWidth;
+    let change = target - begin;
+    box.onclick = function () {
+        this.timer = setInterval(() => {
+            time += 50;
+            if (time >= duration) {
+                clearInterval(this.timer);
+                utils.css(this, 'left', change);
+                return
+            }
+            let cur = linear(time, begin, change, duration);
+            utils.css(this, 'left', cur)
+        })
+    }*/
+//多方向运动的动画
+    let linear=function (t,d,c,b) {
+        return t/d*c+b
+    };
+    let begin={
+        width:utils.css(box,'width'),
+        height:utils.css(box,'height'),
+        opacity:1,
+        left:utils.css(box,'left'),
+        top:utils.css(box,'top'),
+
+    };
+    let target={
+        width:1500,
+        height:300,
+        opacity:0.4,
+        left:1000,
+        top:300
+    }
+    var change={},duration=2000,timer=0;
+    for(var key in target){
+        change[key]=target[key]-begin[key]
+    }
+    box.onclick=function () {
+        this.timer=setInterval(()=>{
+            timer+=50;
+            if(timer>=duration){
+                clearInterval(this.timer);
+                utils.css(this,target);
+                return
+            }
+            for (var key in change){
+                var cur =linear(timer,duration,change[key],begin[key]);
+                utils.css(this,key,cur)
+            }
+        },17)
+    }
+
+</script>

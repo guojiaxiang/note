@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        @media all and (min-width:760px){
+            /*当屏幕的尺寸大于760 的时候，我们可以用里面的样式*/
+            #box{
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        }
+        @media all and (max-width:350px){
+            /*当设备宽度小于350的时候，我们让元素设配这里边的样式*/
+            #box{
+                width: 200px;
+                height: 200px;
+                background: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">666</div>
+</body>
+</html>
+<script>
+    /*
+    *
+    * 响应式布局：
+    * 根据设备屏幕尺寸的不同，适配不同的分辨率
+    * 相应式布局常用的几种方案
+    * 1.流式布局【百分比布局】
+    * 2.媒体查询@media all and (max-width>750px)
+    * 3.rem布局
+    * 4.flexbox【弹性盒模型】
+    *   flexible【淘宝出的js库】【栅格化的页面】
+    * 写移动端的时候，我们需要注意
+    * 1.head标签加一个视口
+    * meta：vp+tab键 meta标签
+    *  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+     name：viewport 视口
+     width=device-width 屏幕的宽度=设备的宽度
+     user-scalable=no 是否允许用于缩放
+     initial-scale=1.0 初始的缩放值是1:1
+     maximum-scale=1.0 最大的缩放值1:1
+     minimum-scale=1.0 最小的缩放值1:1
+    * */
+    /*
+    * 流式布局，百分比布局
+    * 一般情况下我们用来搭建结构的时候，我们最好不要把宽度写死，用百分比来设置结构中的宽度，这样的话可以让它设配不同的屏幕宽度
+    *
+    *
+    * 面试题：一套pc一套移动端，按照什么方式来布局
+    *
+    * 1.如果做得项目只是供用户来看得，也就是只展示的，就用媒体查询
+      2.如果做的项目不只是展示的，还有金钱交易或者登陆注册，为了保证安全性，我们最好做两套（移动端一套、pc段一套）
+    *
+    * rem布局是我们在项目开发中非常常用的一种布局方式，它通常和流式布局搭配使用，rem布局可以让图标图片文字，在不同的屏幕下显示正常的比例，rem现在实用度很高
+    * rem=> root element 根元素=>html标签元素的字体像素
+    * rem属于一个单位，在设置完根元素的像素之后，rem就属于固定的像素单位
+    *
+    * 在浏览器中 默认 1rem=16px
+    * 如果页面当中添加一张图片，320px 用rem来表示 1/16=？/320 ？就表示我想要的那个值
+    * 1rem =100px  //1/100=？/320
+    * ？对应的值只需要向前进两位就可以了3.2
+    * 注意：为什么不设置10 20 30 【12是浏览器字体最小的值，且100比较好计算】
+    *
+    * 设计师=>750
+    * 如果移动端项目是以750为通用宽度，可以设置跟元素为100px
+    * 如果设备宽度为640，我们可以改变跟元素的值，让rem和像素达到1:100
+    *
+    * 750 =>  1rem/100
+    * 640 =>  1rem/
+    *
+    * 使用rem布局，可以让我们在不同尺寸的设备下，都保持一个最完整的比例【和一开始我们要设置的750（例子）为通用尺寸的屏幕比例是一样的】
+    * */
+    (function () {
+        window.addEventListener('resize',size,false);
+        size();
+        function size() {
+            winW=document.documentElement.clientWidth||document.body.clientWidth;
+            document.documentElement.style.fontSize=winW/750*100+'px';
+        }
+    })()
+    //winW=750的话 根元素=>100
+    //winW=640的话 根元素=>85.3
+</script>

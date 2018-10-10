@@ -1,0 +1,73 @@
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ a:hover{
+     background-color: gray;
+ }
+ li{
+     list-style: none;
+ }
+ .box1{
+     width: 700px;
+ }
+
+ .box1 h2{
+     background-color: #ffd533;
+     width: 700px;
+     height: 40px;
+     line-height: 40px;
+     text-align: center;
+     color: white;
+    font-size: 18px;
+ }
+ .box1 h3{
+     color:cornflowerblue;
+    font-size: 15px;
+ }
+
+ .box1 p{
+     font-size: 15px;
+     line-height: 45px;
+ }
+
+  a{
+     text-decoration: none;
+ }
+ .box1 span{
+     color: #ffb628;
+ }
+ .box1 ul li{
+     line-height: 45px;
+ }
+
+.box2{
+    width: 700px;
+}
+ .box2 h2{
+     font-size: 18px;
+     width: 700px;
+     height: 40px;
+     line-height: 40px;
+ }
+ .box2 h2 a span{
+
+     color: green;
+     font-size: 14px;
+     text-align: right;
+
+ }
+.box2 li{
+    line-height: 35px;
+}
+.box2 span{
+    color: #2fb5ff;
+}
+.box2 hr{
+    color: rosybrown;
+    line-height: 40px;
+}
+.box2 .nm{
+    float: right;
+}
+

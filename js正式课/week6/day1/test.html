@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="drag.js"></script>
+<script>
+   /* function fn1() {
+        console.log(1);
+    }
+    function fn2() {
+        console.log(2);
+    }
+    function fn3(a,b) {
+        console.log(a+b);
+    }
+    var cb=new Callbacks();
+    cb.add('登录',fn1,fn2,fn3);
+    cb.remove('登录',fn2);
+    console.log(cb.has('登录', fn3));
+    cb.fire('登录',1,2)*/
+   let div=document.getElementById('box');
+   new Drag(div).jump();
+
+</script>

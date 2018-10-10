@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--多级菜单-->
+    <!--<style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .province{
+            width: 300px;
+            padding: 30px;
+            background: -webkit-linear-gradient(top left,yellowgreen,orange,green,blue);
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+        .province li{
+            position: relative;
+        }
+        em,span{
+            display: inline-block;
+        }
+        .province li em{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 7px;
+            left: 0;
+            background: uimg4"img/icon.png") no-repeat;
+            background-position:-59px -28px ;
+        }
+        .province li em.open{
+            background-position: -42px -28px;
+        }
+        .province li span{
+            height: 30px;
+            line-height: 30px;
+            margin-left:30px;
+        }
+        .province li ul{
+            margin-left: 40px;
+            display: none;
+        }
+    </style>-->
+    <!--拖拽-->
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+
+
+</head>
+<body>
+<!--事件委托-->
+<!--<div id="outer">
+    outer
+    <div id="inner">
+        inner
+        <div id="center">
+            center
+        </div>
+    </div>
+</div>-->
+<!--多级菜单-->
+<!--<ul class="province">
+    <li>
+        <em></em><span>河北</span>
+        <ul class="city">
+            <li>
+            <span>石家庄</span>
+            </li>
+            <li>
+                <em></em><span>衡水</span>
+                <ul class="county">
+                    <li>
+                        <span>饶阳</span>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </li>
+    <li><em></em><span>山东</span>
+        <ul class="city">
+            <li>
+                <span>青岛</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>闪现</span>
+    </li>
+</ul>-->
+<!--拖拽-->
+<div id="box"></div>
+</body>
+</html>
+<script>
+    /*事件委托：
+     又称为事件代理，当我们给父元素下面的元素进行绑定事件的时候，我们没有必要给每一个子元素都绑定，我们可以利用事件冒泡的原理，给父元素绑定一个事件，这样的话，我们不管触发那个子元素，都会冒泡传播到父元素，然后进行相对应的执行，而且我们可以利用事件对象中的事件源，控制操作的子元素达到相应的效果。
+     注意：事件委托是依据事件冒泡的原理来实现的，onmouseenter没有冒泡传播，所以她不能使用事件委托
+     *  我们利用事件委托绑定操控子元素，比给每一个子元素逐个绑定方法提高性能50%以上
+     *
+     * */
+    //    outer.onclick=function (e) {
+    //        if(e.target.id=='center'){
+    //            center.innerHTML+='????????????'
+    //        }else if(e.target.id=='inner'){
+    //            inner.innerHTML+='en??'
+    //        }else if(e.target.id=='outer'){
+    //            outer.innerHTML+='我去！'
+    //        }
+    //    }
+    /*
+     * 多级菜单
+     *
+     *
+     *
+     * */
+    //    let province=document.getElementsByClassName('province')[0];
+    //    province.onclick=function (e) {
+    //        //判断事件源是哪个元素
+    //        if(e.target.tagName==='EM'){
+    //            shopList(e.target.nextElementSibling)
+    //        }else if(e.target.tagName==='SPAN'){
+    //            shopList(e.target)
+    //        }
+    //    }
+    //    //显示下面的列表
+    //    function shopList(span) {
+    //        //拿到span下面的ul标签，主要操作ul
+    //        let ul=span.nextElementSibling;
+    //        if(ul){
+    //            let flag=getComputedStyle(ul)['display'];
+    //            if(flag==='none'){
+    //                ul.style.display='block';
+    //                span.previousElementSibling.className='open'
+    //            }else{
+    //                ul.style.display='none';
+    //                span.previousElementSibling.className='';//+=>收缩
+    //                //ul下面的子元素还是他原来的状态=>让所有的子菜单都收起来
+    //                let uls=ul.getElementsByTagName('ul');
+    //                for (var i=0;i<uls.length;i++){
+    //                    //让所有ul都进行隐藏
+    //                    uls[i].style.display='none';
+    //                    //让ul上一个哥哥元素的上一个哥哥元素进行+号显示
+    //                    uls[i].previousElementSibling.previousElementSibling.className='';
+    //                }
+    //            }
+    //        }
+    //    }
+    /*
+     *
+     * 拖拽
+     * */
+    //方法一
+    //box.onmousedown=function (e) {
+    //    //通过事件对象和左偏移量相减，求出鼠标距离盒子的距离
+    //    this.l=e.clientX-this.offsetLeft;
+    //    this.t=e.clientY-this.offsetTop;
+    //    //由于鼠标滑动过快会脱离到盒子以外的地方，这样的话，onmousemove方法就不会在继续执行，所以我们需要给最外层的元素绑定事件，利用事件委托的原理，解决盒子滑动过快的问题
+    //    document.onmousemove= (e)=> {
+    //        var l=e.clientX-this.l;
+    //        var t=e.clientY-this.t;
+    //        box.style.left=l+'px';
+    //        box.style.top=t+'px';
+    //    }
+    //}
+    //box.onmouseup=function () {
+    //    document.onmousemove=null;
+    //}
+    //方法二(1)
+    //    box.onmousedown=function (e) {
+    //        this.l=this.offsetLeft;
+    //        this.t=this.offsetTop;
+    //        this.mx=e.clientX;
+    //        this.my=e.clientY;
+    //        var that=this;
+    //        document.onmousemove=function (e) {
+    //            var l=e.clientX-that.mx+that.l;
+    //            var t=e.clientY-that.my+that.t;
+    //            that.style.left=l+'px';
+    //            that.style.top=t+'px';
+    //        }
+    //    };
+    //    box.onmouseup=function () {
+    //       document.onmousemove=null;
+    //    }
+    /*
+     * 订阅：
+     * 取消订阅：
+     * 发布：
+     * 1.创建一个事件池
+     * 2.按照顺序将方法依次添加到事件池中，
+     * 3.只要指令一旦触发，到事件池中将所有的方法依次执行
+     *
+     * */
+    //on 将方法添加到事件池中
+    //off判断方法是否在事件池中，如果有则移除
+    //fire 将事件池中的方法，按照顺序依次执行
+    //发布订阅 一
+    //    var ary=[];
+    //    function on(fn) {
+    //        ary.push(fn)
+    //    }
+    //    function off(fn) {
+    //        if(ary.includes(fn)){
+    //            var n=ary.indexOf(fn);
+    //            ary.splice(n,1);
+    //        }
+    //    }
+    //    function fire() {
+    //        ary.forEach(item=>{
+    //            item&&item()
+    //        })
+    //    }
+    //    function fn1() {
+    //        console.log(1);
+    //    }
+    //    function fn2() {
+    //        console.log(2);
+    //    }
+    //    function fn3() {
+    //        console.log(3);
+    //    }
+    //    on(fn2);
+    //    on(fn3);
+    //    on(fn1);
+    //    off(fn3);
+    //    fire()
+    //发布订阅 二
+    //给元素添加发布订阅
+    //    function on(ele, type, fn) {
+    //        ele[type] = ele[type] || [];
+    //        if (!ele[type].includes(fn)) {
+    //            ele[type].push(fn);
+    //        }
+    //    }
+    //    function off(ele,type,fn) {
+    //        if(ele[type]&&ele[type].includes(fn)){
+    //            var n=ele[type].indexOf(fn);
+    //            ele[type].splice(n,1)
+    //        }
+    //    }
+    //    function fire(ele,type) {
+    //        if(ele[type] instanceof Array){
+    //            ele[type].forEach(item=>{
+    //                if(typeof item==='function'){
+    //                    item()
+    //                }
+    //            })
+    //        }
+    //    }
+    //    function fn1() {
+    //        console.log('判断用户是否登录');
+    //    }
+    //    function fn2() {
+    //        console.log('判断用户是否移动端或其他手持设备');
+    //    }
+    //    function fn3() {
+    //        console.log('用户选择的城市信息数据库是否显示有');
+    //    }
+    //    on(box,'changeCity',fn1);
+    //    on(box,'changeCity',fn2);
+    //    on(box,'changeCity',fn3);
+    //    function city() {
+    //        off(box,'changeCity',fn2);
+    //        fire(box,'changeCity')
+    //    }
+    //    city()
+
+</script>
+<!--
+//方法二(dom2级事件)
+<script src="drag.js"></script>
+<script>
+    new Drag(box)
+</script>-->
+//发布订阅 三
+<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    console.log($);
+    //在jq中也有发布订阅  add remove fire clear has
+    function fn1() {
+        console.log(1);
+    }
+    function fn2() {
+        console.log(2);
+    }
+    function fn3() {
+        console.log(3);
+    }
+    var cb=$.Callbacks();
+    cb.add(fn1,fn2,fn3);//向事件池中添加方法
+    cb.remove(fn2);//移除某个方法
+    console.log(cb.has(fn1));//判断事件池中是否有某种方法
+    cb.empty();//清空事件池
+    cb.fire(1,2);//让事件池当中的方法按照添加的顺序依次执行
+</script>

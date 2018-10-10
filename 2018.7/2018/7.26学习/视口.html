@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+
+    <!--目的：HTML页面的宽度等于设备（移动设备）可视窗口宽度-->
+    <!--PC端和移动端公用一套项目时
+    1、媒体查询+百分比布局+px单位
+    2、一般在用媒体查询，在移动端最大宽度-->
+</head>
+<body>
+<style>
+    * {
+        margin: 0
+    }
+
+    header {
+        width: 1000px;
+        height: 100px;
+        background-color: #2b7dd1;
+        font-size: 50px;
+        color: #fff;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 100px;
+    }
+    @media all and (max-width: 414px) {
+        header{
+            width: 100%;
+        }
+
+    }
+</style>
+<header>我是头部</header>
+</body>
+</html>

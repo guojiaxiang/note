@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 300px;
+            /*height: 270px;*/
+            margin: 0;
+            border: 1px solid red;
+        }
+
+        li {
+            width: 100%;
+            height: 30px;
+            border-bottom: 1px solid black;
+        }
+
+        .bg1 {
+            background-color: yellow;
+        }
+
+        .bg2 {
+            background-color: gold;
+        }
+
+        .bg3 {
+            background-color: aqua;
+        }
+        .bg4{
+            background-color: blueviolet;
+        }
+        .bg5{
+            background-color: burlywood;
+        }
+
+        /* li:nth-child(odd){
+             background-color: yellow;
+         }
+         li:nth-child(even){
+             background-color: rebeccapurple;
+         }*/
+    </style>
+</head>
+<body>
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+
+</body>
+</html>
+<script>
+    var lis = document.getElementsByTagName('li')
+    //    通过标签名获取到元素集合
+    //    给每一行进行渲染颜色，需要循环每一行
+    for (var i = 0; i < lis.length; i++) {
+//        lis[i].className = 'bg1'
+        if (i % 2) {
+            //通过判断i的奇偶
+            lis[i].className = 'bg1'
+            lis[i].index= 'bg4'
+        }
+        else {
+            lis[i].className = 'bg2'
+            lis[i].index= 'bg5'
+        }
+//        hover效果在js中用onmouseover
+        lis[i].onmouseover = function () {
+//            console.log(this.innerHTML);
+            this.className = 'bg3'
+        }
+//        自定义属性：在当前的li标签中，将之前设置的颜色属性保存起来
+//        划出的时候，我们直接拿到li标签上的属性名为index所对应的属性值，就是每个li原来的类名
+        lis[i].onmouseout =function () {
+//            this滑出的时候，鼠标滑出的那一项li
+            this.className=this.index//this.index就是一开始渲染隔行的时候保存的那个原始值
+        }
+    }
+</script>

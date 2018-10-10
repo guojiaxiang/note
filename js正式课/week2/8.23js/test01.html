@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+   /* function type(value) {
+        var key  = Object.prototype.toString.call(value);
+        var index =key.indexOf(' ');
+        return key.slice(index+1,key.length-1)
+     //   console.log(key.slice(7,key.length-1));
+     /!*   return function () {
+            console.log(a);
+        }*!/
+    };
+    /!*var a =function () {
+
+    }
+    console.log(a);*!/
+    type(9);
+    type('b')*/
+   var xhr =new XMLHttpRequest();
+   xhr.open('get','tsconfig.json',false)
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==4&&xhr.status==200){
+            console.log(JSON.parse(xhr.responseText));
+        }
+    }
+    xhr.send()
+</script>

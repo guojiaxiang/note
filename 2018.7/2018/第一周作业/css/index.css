@@ -1,0 +1,126 @@
+.box {
+
+    background-color: white;
+
+}
+
+.boxa {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.box01 {
+    float: left;
+    margin-top: 20px;
+}
+
+.box02 {
+    float: left;
+    padding-left: 80px;
+    padding-top: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.box02 a {
+    padding: 20px;
+    font-weight: normal
+}
+
+.box02 a:hover {
+    color: #1c90f2
+}
+
+.box03 {
+    float: right;
+    padding-top: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.box03 a {
+    padding: 10px;
+    font-weight: normal
+}
+
+.box03 a span i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 22px;
+    background: url("../img/icon1.png") no-repeat;
+    margin-right: 7px
+}
+
+.box03 a span:hover {
+    background: url("../img/icon2.png") no-repeat;
+    color: #1c90f2
+}
+
+.boxb {
+    width: 100%;
+    height: 200px;
+    background-color: #2e2e2e
+}
+
+.boxb .main {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.boxb .left {
+    float: left;
+}
+
+.boxb .left dl {
+    float: left;
+    padding-left: 56px;
+    margin-top: 50px
+}
+
+.boxb .left dl dt {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: white
+}
+
+.boxb .left dl dd a {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #a3a3a3
+}
+
+.boxb .right {
+    display: inline-block;
+    margin-left: 50px
+}
+
+.boxb .right .logo {
+    margin-top: 50px
+}
+
+.boxb .right .icon li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 15px;
+    width: 51px;
+    height: 51px;
+}
+
+.boxb .right .icon li span {
+    width: 190px;
+    height: 190px;
+    display: none;
+    border-color: red transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    float: left
+}
+
+/*.boxb .right .icon .tu1:hover {*/
+/*display: block;*/
+/*}*/
+
+
+

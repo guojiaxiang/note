@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //arguments[0] 第一个是实参  arguments[1]第二个实参。。。最后一个实参arguments[arguments.length-1]
+    //所有实参个数 arguments.length
+
+    //求任意实参个数之和
+    /*   function sum(){//形参 代号，不是具体的值，用来存储实参的值（实参确定个数的时候才会使用）
+     //1、如何拿到实参  arguments  arguments[],拿到数字
+     //2、如何获取每一个实参  for循环
+     var total=null;
+     for (var i=0;i<arguments.length;i++){
+     console.log(arguments[i]);
+     //取值之和需要把每一次拿到的值贮存起来  total=arguments[i]
+     //累加的结果需要保存下来  total=total+arguments[i]
+     total=total+arguments[i];
+     //total +=argumennts[i]
+     }
+     //3、每一个实参累加起来
+     //        console.log((typeof arguments));//对象类型
+     //   console.log((arguments instanceof Arry));//false  不是数组
+     //类数组 属性名是数字有length属性  对象可以说是类数组
+     // console.log(arguments);
+     }
+     //    var total=10
+     sum(10,5,20)//方法运行时传的参数叫实参*/
+    //求任意有效实参个数之和   isNaN
+    function sum() {
+        var total = null;
+        for (var i = 0; i < arguments.length; i++) {
+            if (!isNaN(arguments[i])) {
+                total += Number(arguments[i]);
+            }
+        }
+        return total;
+    }
+    var total = sum(10, 5, 20, 'zhufeng', '111');
+    console.log(total);
+
+
+    function sum() {//形参 代号，不是具体的值，用来存储实参的值（实参确定个数的时候才会使用）
+//1、如何拿到实参  arguments  arguments[],拿到数字
+        //2、如何获取每一个实参  for循环
+        var total = null;
+        for (var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+            //取值之和需要把每一次拿到的值贮存起来  total=arguments[i]
+            //累加的结果需要保存下来  total=total+arguments[i]
+            if (!isNaN(arguments[i])) {//isNaN()结果为false；if条件的判断结果为true
+                //total=total+arguments[i];
+                total += Number(arguments[i])
+            }
+            return total;//返回值
+        }
+        //3、每一个实参累加起来
+//        console.log((typeof arguments));//对象类型
+        //   console.log((arguments instanceof Arry));//false  不是数组
+        //类数组 属性名是数字有length属性  对象可以说是类数组
+        // console.log(arguments);
+    }
+    //    var total=10
+    var total = sum(10, 5, 20, 'zhufeng', '123')//方法运行时传的参数叫实参
+    //1、函数运行  2、拿到return的值
+    console.log(total);
+</script>

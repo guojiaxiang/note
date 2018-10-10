@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <style type="text/css">
+        .main{
+            width:1204px;
+            margin:0 auto;
+        }
+        .content{
+            margin-top:39px;
+        }
+        .content h3{
+            margin-bottom: 20px;
+            font-weight: normal;
+            font-size: 16px;
+            color: #2d2d2d;
+        }
+        .content .list{
+
+        }
+        .content .list ul{
+            margin-left:-65px;
+        }
+        .content .list li{
+            position: relative;
+            float: left;
+            width:251px;
+            height: 184px;
+            margin-left:65px;
+            /*margin-right:65px;*/
+        }
+        /*.content .list li.noMargin{
+            margin-right:0;
+        }*/
+        .content .list li img{
+            width:100%;/*继承父元素的宽度*/
+        }
+        .content .list li .top{
+            position: absolute;
+            left:0;
+            bottom:0;
+            width:221px;
+            padding:15px;
+            background: url("img/whiteBg.png") no-repeat;
+            transition:all .3s;/*过渡动画*/
+        }
+        .content .list li .top:hover{
+            bottom: 42px;
+        }
+        .content .list li .top h4{
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 14px;
+            color: #1e1e1e;
+            font-weight: normal;
+        }
+        .content .list li .top p{
+            font-size: 12px;
+            line-height: 14px;
+            color: #9e9d9d;
+            padding-top:2px;
+        }
+        .content .list li .bot{
+            position: absolute;
+            left:0;
+            bottom: 0;
+            width:221px;
+            height: 42px;
+            line-height: 42px;
+            padding:0 15px;
+            font-size: 12px;
+            background-color: #fff;
+        }
+        .content .list li .bot .money{
+            color: #c71b1b;
+        }
+        .content .list li .bot .study{
+            float: right;
+            color: #868484;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="content main">
+    <h3>实战推荐</h3>
+    <div class="list">
+        <ul class="clear">
+            <li>
+                <img src="img/img01.jpg" alt="">
+                <div class="top">
+                    <h4>Vue.js高仿饿了么外卖APP</h4>
+                    <h4>2016最火前端框架</h4>
+                    <p>vue.js 兼具 angular.js 和 react.js的优点，并剔除它们的缺点</p>
+                </div>
+                <div class="bot">
+                    <span class="money">￥198.0</span>
+                    <span class="study">1911人在学</span>
+                </div>
+            </li>
+            <li>
+                <img src="img/img01.jpg" alt="">
+                <div class="top">
+                    <h4>Vue.js高仿饿了么外卖APP</h4>
+                    <h4>2016最火前端框架</h4>
+                    <p>vue.js 兼具 angular.js 和 react.js的优点，并剔除它们的缺点</p>
+                </div>
+                <div class="bot">
+                    <span class="money">￥198.0</span>
+                    <span class="study">1911人在学</span>
+                </div>
+            </li>
+            <li>
+                <img src="img/img01.jpg" alt="">
+                <div class="top">
+                    <h4>Vue.js高仿饿了么外卖APP</h4>
+                    <h4>2016最火前端框架</h4>
+                    <p>vue.js 兼具 angular.js 和 react.js的优点，并剔除它们的缺点</p>
+                </div>
+                <div class="bot">
+                    <span class="money">￥198.0</span>
+                    <span class="study">1911人在学</span>
+                </div>
+            </li>
+            <li class="noMargin">
+                <img src="img/img01.jpg" alt="">
+                <div class="top">
+                    <h4>Vue.js高仿饿了么外卖APP</h4>
+                    <h4>2016最火前端框架</h4>
+                    <p>vue.js 兼具 angular.js 和 react.js的优点，并剔除它们的缺点</p>
+                </div>
+                <div class="bot">
+                    <span class="money">￥198.0</span>
+                    <span class="study">1911人在学</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

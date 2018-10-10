@@ -1,0 +1,236 @@
+<!DOCTYPE html><html><head><title>CSS单词梳理</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><ul>
+<li><ul>
+<li><a href="#css单词梳理">CSS单词梳理</a><ul>
+<li><a href="#css的核心知识-定位-布局-盒子模型-背景-字体-动画">CSS的核心知识:   定位  +  布局   +  盒子模型  +  背景  +  字体   +  动画</a></li>
+<li><a href="#1定位-positioning">1.定位 positioning</a></li>
+<li><a href="#2布局layout">2.布局（layout）</a></li>
+<li><a href="#3-盒子模型">3. 盒子模型</a><ul>
+<li><a href="#1尺寸dimension">1.尺寸(Dimension)</a></li>
+<li><a href="#2外补白margin">2.外补白(margin)</a></li>
+<li><a href="#3内补白padding">3.内补白(padding)</a></li>
+<li><a href="#4边框border">4.边框（border）</a></li>
+</ul>
+</li>
+<li><a href="#4背景background">4.背景（background）</a></li>
+<li><a href="#5颜色color">5.颜色（color）</a></li>
+<li><a href="#6字体font">6.字体（font）</a></li>
+<li><a href="#7文本text">7.文本（text）</a></li>
+<li><a href="#8文本装饰text-decoration">8.文本装饰（text decoration）</a></li>
+<li><a href="#9列表list">9.列表（list）</a></li>
+<li><a href="#10用户界面user-interface">10.用户界面（user Interface）</a></li>
+<li><a href="#11变换transform">11.变换(transform)</a></li>
+<li><a href="#12过渡transition">12.过渡（transition）</a></li>
+<li><a href="#13动画animation">13.动画（animation）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h3 id="css单词梳理">CSS单词梳理</h3>
+
+
+
+<h4 id="css的核心知识-定位-布局-盒子模型-背景-字体-动画">CSS的核心知识:   定位  +  布局   +  盒子模型  +  背景  +  字体   +  动画</h4>
+
+<h4 id="1定位-positioning">1.定位 positioning</h4>
+
+<ul><li>position: absolute;   绝对定位</li>
+<li>position:relative;      相对定位</li>
+<li>position:fixed;          固定定位</li>
+<li>position: static         正常文档流（没有定位）</li>
+<li>top 居上</li>
+<li>bottom 居下</li>
+<li>left  居左</li>
+<li>right  居右</li>
+<li>z-index 改变层级  值越大 越在上面</li>
+</ul>
+
+
+
+<h4 id="2布局layout">2.布局（layout）</h4>
+
+<ul><li>display: inline  行内/内联元素</li>
+<li>display:block    块级元素 / 让元素显示</li>
+<li>display: inline-block  行内块元素</li>
+<li>display:none   让元素隐藏/消失</li>
+<li>float:left   左浮动（靠左显示）</li>
+<li>float:right 右浮动（靠右显示）</li>
+<li>float:none  不浮动（正常的文档流）</li>
+<li>clear: left   不允许左边有浮动对象（清除左边的浮动）</li>
+<li>clear:right  不允许右边有浮动对象(清除右边的浮动)</li>
+<li>clear:both  不允许左右两边有浮动对象（清除左右两边的浮动）</li>
+<li>clear: none   允许左右两边有浮动对象</li>
+<li>visibility: hidden 让所有可见性的元素隐藏</li>
+<li>visibility: visible   让所有可见性的元素显示</li>
+<li>overflow:hidden  溢出隐藏/清除浮动/解决margin-top的传递问题</li>
+<li>overflow-x:hidden 水平方向隐藏</li>
+<li>overflow-y:hidden 垂直方向隐藏</li>
+<li>overflow-x:scroll   水平方向出现滚动条</li>
+<li>overflow-y:scroll   垂直方向出现滚动条</li>
+<li>overflow: auto      隐藏方式为自动     </li>
+</ul>
+
+
+
+<h4 id="3-盒子模型">3. 盒子模型</h4>
+
+<h5 id="1尺寸dimension">1.尺寸(Dimension)</h5>
+
+<ul><li>width 宽度</li>
+<li>min-width 最小宽度</li>
+<li>max-width 最大宽度</li>
+<li>height 高度</li>
+<li>min-height 最小高度</li>
+<li>max-height 最大高度</li>
+</ul>
+
+<h5 id="2外补白margin">2.外补白(margin)</h5>
+
+<ul><li>margin: 上   右   下   左(遵循顺时针的方向)；</li>
+<li>margin-top 上外边距</li>
+<li>margin-bottom 下外边距</li>
+<li>margin-left 左外边距</li>
+<li>margin-right 右外边距</li>
+</ul>
+
+
+
+<h5 id="3内补白padding">3.内补白(padding)</h5>
+
+<ul><li>padding: 上  右  下  左(遵循顺时针的方向)</li>
+<li>padding-top 上内边距</li>
+<li>padding-bottom 下内边距</li>
+<li>padding-left  左内边距</li>
+<li>padding-right 右内边距</li>
+</ul>
+
+<h5 id="4边框border">4.边框（border）</h5>
+
+<ul><li>border 复合属性，四个方向边框线</li>
+<li>border-width 边框线的宽度</li>
+<li>border-style 边框线的类型（solid 实线  dashed 虚线  dotted 点状线）</li>
+<li>border-color 边框线的颜色</li>
+<li>border-top 上边框线</li>
+<li>border-bottom 下边框线</li>
+<li>border-left 左边框线</li>
+<li>border-right 右边框线</li>
+<li>border-radius: 上左    上右    下右   下左； 圆角(50% 可以把正方形或者长方形变成圆形)</li>
+<li>box-shadow 盒子的阴影</li>
+</ul>
+
+<h4 id="4背景background">4.背景（background）</h4>
+
+<ul><li>background 背景的复合属性（简写）</li>
+<li>background-color 背景颜色</li>
+<li>background-image 背景图片</li>
+<li>background-repeat  背景平铺(重复)方式</li>
+<li>background-attachment 背景随着滚动条是滚动还是固定</li>
+<li>background-position: x轴  y轴； 背景定位（雪碧图的重要属性）</li>
+<li>background-origin 背景显示的左边原点</li>
+<li>background-clip  背景裁剪的方式</li>
+<li>background-size  背景尺寸</li>
+</ul>
+
+
+
+<h4 id="5颜色color">5.颜色（color）</h4>
+
+<ul><li>color 字体颜色</li>
+<li>opacity   透明度 取值范围【0-1】</li>
+</ul>
+
+
+
+<h4 id="6字体font">6.字体（font）</h4>
+
+<ul><li>font 字体的复合属性（简写）</li>
+<li>font-size: 字体大小</li>
+<li>font-weight 字体粗细</li>
+<li>font-style 字体样式(斜体/正常)</li>
+<li>font-family 字体类型(黑体 宋体等)</li>
+</ul>
+
+
+
+<h4 id="7文本text">7.文本（text）</h4>
+
+<ul><li>white-space：nowrap 禁止文字折行（出现省略必备的条件之一）</li>
+<li>text-align:left 文字居左对齐</li>
+<li>text-align:center 文字居中对齐</li>
+<li>text-align:right 文字居右对齐</li>
+<li>letter-spacing  文字与文字的左右间距</li>
+<li>line-height 文字与文字的上下间距</li>
+<li>text-indent 缩短缩进  -9999px 会让文字消失在页面中</li>
+<li>vertical-align 基线对齐</li>
+</ul>
+
+
+
+<h4 id="8文本装饰text-decoration">8.文本装饰（text decoration）</h4>
+
+<ul><li>text-decoration：none 去掉a的下划线</li>
+<li>text-decoration: underline 增加下划线</li>
+<li>text-shadow 文字阴影</li>
+</ul>
+
+
+
+<h4 id="9列表list">9.列表（list）</h4>
+
+<ul><li>list-style：none 去掉li前面默认的小黑点或者数字</li>
+</ul>
+
+
+
+<h4 id="10用户界面user-interface">10.用户界面（user Interface）</h4>
+
+<ul><li>text-overflow:elipsis 文本以省略号的方式隐藏（出现省略号必备的条件之一）</li>
+<li>cursor: pointer 让鼠标变成小手的形状</li>
+<li>zoom:1 检索对象的缩放比例</li>
+<li>box-sizing IE怪异盒模型</li>
+</ul>
+
+<h4 id="11变换transform">11.变换(transform)</h4>
+
+<ul><li>transform：translateX(10px)  x轴（水平方向）移动10px</li>
+<li>transform： translateY(10px)  y轴（垂直方向）移动10px</li>
+<li>transform: translate(10px,10px)  x和y轴同时移动10px</li>
+<li>transform: scale(2)  把元素放大2被</li>
+<li>transform: rotate(90deg) 把元素旋转90度</li>
+</ul>
+
+
+
+<h4 id="12过渡transition">12.过渡（transition）</h4>
+
+<ul><li>transition 过渡简写</li>
+<li>transtiton-property 过渡动画的属性名称</li>
+<li>transition-duration 过渡动画的持续时间</li>
+<li>transition-timing-function   过渡动画的运动曲线  ease 默认值：匀速</li>
+<li>transition-delay 过渡动画的延迟时间</li>
+</ul>
+
+<h4 id="13动画animation">13.动画（animation）</h4>
+
+<ul><li>animation 动画的简写</li>
+<li>animation-name 动画的名称</li>
+<li>animation-duration 动画的持续时间</li>
+<li>animation-timing-function 动画的运动曲线</li>
+<li>animation-delay 动画的延迟时间</li>
+<li>animation-iteration-count 动画的运动曲线 （infinite 无限次）</li>
+<li>animation-direction 动画运动的方向</li>
+<li>animation-play-state 动画运动的状态  playing 运动 pasued 暂停</li>
+<li>animation-fill-mode 动画结束时保持的状态</li>
+</ul></div></body></html>

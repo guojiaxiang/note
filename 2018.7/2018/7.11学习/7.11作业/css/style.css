@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+div.box1 {
+    position: absolute;
+    left: 30%
+}
+
+div a:hover {
+    background-color: grey;
+}
+
+div.box1 ul li {
+    height: 30px;
+    line-height: 30px
+}
+
+div a {
+    text-decoration: none;
+}
+
+div.box1 {
+    width: 700px;
+    background-color: darkgray
+}
+
+div h3 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+}
+
+div h4 {
+    height: 28px;
+    line-height: 28px;
+    color: blue;
+}
+
+div p {
+    height: auto;
+    line-height: normal
+}
+
+div ul li a span {
+    font-weight: bold;
+    color: orange
+}
+
+div.box2 {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+}
+
+div.box2 {
+    width: 700px;
+    background-color: darkgray
+}
+
+div.box2 h2 {
+    height: 40px;
+    line-height: 40px;
+    background-color: orangered;
+    color: grey;
+}
+
+div.box2 h2 a:hover {
+    background-color: orangered;
+}
+
+div.box2 h2 a {
+    font-size: 14px;
+    color: greenyellow;
+    float: right;
+}
+
+div.box2 ol span {
+    color: aqua
+}
+
+div.box2 ol li {
+    height: 30px;
+    line-height: 30px
+}

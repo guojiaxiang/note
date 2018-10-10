@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    00
+    <li>1</li>
+    11
+    <li id="Li2">2</li>
+    22
+    <li>3</li>
+    33
+    <li>4</li>
+    44
+    <li>5</li>
+    55
+</ul>
+</body>
+</html>
+<script>
+    /*1.获取所有的子元素节点
+     * @param ele  指定的元素
+     * @return ary  ary里方着和所有的子元素节点
+     * 2.从所有子节点中找出元素节点存入数组中
+     *
+     *
+     *
+     *
+     * */
+    /* @param ele  指定的元素
+     * @return ary  相邻的哥哥元素
+     * */
+   /* function getPrev(ele) {
+        var pre = ele.previousSibling;
+        while (pre) {
+            if (pre.nodeType === 1) {
+                return pre
+            }
+            pre=pre.previousSibling
+        }
+        return pre
+    }
+    var oLi2 = document.getElementById('Li2');
+    console.log(getPrev(oLi2));*/
+   function getPrevAll(ele) {
+       var ary =[];
+       var pre =getPrev(ele);
+       while(pre){
+           ary.push(pre);
+           pre=getPrev(pre);
+       }
+       return ary
+   }
+   var oLi2=document.getElementById('li2');
+    console.log(getPrevAll(ele));
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid yellow ;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script>
+/*function win(key) {
+    var clientHeight=document.documentElement[key];
+    var clientWidth= document.documentElement[key];
+    var
+}*/
+let box=document.getElementById('box');
+let boxW=box.offsetWidth;
+let boxH=box.offsetHeight;
+let winW=document.documentElement.clientWidth;
+let winH=document.documentElement.clientHeight;
+box.style.marginLeft=(winW-boxW)/2+'px';
+box.style.marginTop=(winH-boxH)/2+'px';
+
+//封装一个方法，求出当前元素距离body的偏移量
+    function offset(ele) {
+        //先求出元素距离父级参照物的偏移量
+        let l=ele.offsetLeft;
+        let t=ele.offsetTop;
+        let parent=ele.offsetParent;
+        console.dir(parent);
+        //判断父级元素是不是body，如果是，证明已经到了最外层的body元素，就不用再循环了；如果不是，我们需要继续循环父级参照物，并累加父级参照物的边框以及偏移量
+        while(parent.tagName!='BODY'){
+            //需要累加父级参照物的左边框
+            l+=parent.clientLeft;
+            t+=parent.clientTop;
+            //需要累加父级参照物的左偏移量
+            l+=parent.offsetLeft;
+            t+=parent.offsetTop;
+            parent=parent.offsetParent//更新父级参照物，如果不更新则会进入死循环
+        }
+        /*
+        *在ie8有兼容问题，它的偏移量包括边框的宽度
+        * 可以通过window.navigator.userAgent 来判断当前浏览器是什么版本的浏览器
+        * /MSIE 8/.test(window.navigator.userAgent)  符合条件就是ie8
+        *
+        * */
+        return {left:l,top:t}
+    }
+    offset(box).left
+</script>

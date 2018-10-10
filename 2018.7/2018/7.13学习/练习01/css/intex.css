@@ -1,0 +1,118 @@
+.header {
+    width: 1000px;
+    height: 60px;
+    background-color: darkolivegreen;
+    margin: 0 auto;
+}
+
+.header .logo, .header .nav, .header .login {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.header .logo {
+    width: 176px;
+    height: 52px;
+    margin-left: 50px;
+}
+
+.header .nav {
+    margin-left: 70px
+}
+
+.header .nav a:hover {
+    font-weight: bold;
+    font-size: 20px
+}
+
+.header .nav a {
+    margin-left: 30px
+}
+
+.header .login span i {
+    display: inline-block;
+    width: 24px;
+    height: 22px;
+    background: url("../img/icon1.png") no-repeat;
+    vertical-align: middle;
+}
+
+.header .login span:hover i {
+    background: url("../img/icon2.png") no-repeat;
+}
+
+.header .login span:hover {
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+    cursor: pointer
+}
+
+.header .login {
+    margin-left: 70px
+}
+
+.header .login a {
+    margin-left: 30px;
+    font-size: 16px;
+    float: left;
+}
+
+.header .login a:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.header .login a {
+    *zoom: 1; /*兼容低版本浏览器*/
+}
+
+.header .login .a1 {
+    float: left
+}
+
+.header .login .a1:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.header .login .a1 {
+    *zoom: 1; /*兼容低版本浏览器*/
+}
+
+.header .login a:hover {
+    font-weight: bold;
+    font-size: 20px;
+}
+ .login .a1 {
+    position: relative;display:inline;
+    /*left: -200px;*/
+    /*top: -50px;*/
+
+}
+
+.login .a1 .hidden {
+    width: 400px;
+    height: 400px;
+    background-color: yellow;
+    position: absolute;
+    display: none;
+    top:50px;
+    left: -180px;
+
+}
+
+/*.header .login span {*/
+/*float: left*/
+/*}*/
+
+.login:hover .a1 .hidden{
+    display: block;
+}
+/*.header .login .a1 .hidden:{display: block;content:"";color: #1c90f2}*/
+
+
+
+

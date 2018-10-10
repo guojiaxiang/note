@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * jq上的属性和方法
+    *
+    * jq它是一个类，在jq上有一个prototype存放的是多有的jq实例的公共方法；jq也是一个对象，在jq的对象上也存在一些属性和方法，可以直接来调用
+    * */
+//jq原型上的方法
+    $('#box').append()
+    $('#box').appendTo()
+//jq的属性方法
+    $('#box').attr()//通过attr设置，就通过attr获取
+    //给元素设置行内的自定义属性
+    $('#box').prop()// . 通过prop给元素设置自定义属性
+    $('#box').addClass()
+    $('#box').removeClass()
+    $('#box').toggleClass()
+    $('#box').html()
+    $('#box').text()
+    $('#box').value()//给
+    //jq对象上的一些方法
+    $.each([1,2,3,4],function () {})//用来便利的
+    $.extend()//给jq上扩展一些方法
+    $.fn.extend({})//给jq原型上扩展一些方法
+    $.unique()
+
+</script>

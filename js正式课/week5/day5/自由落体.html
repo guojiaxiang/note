@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            background: red;
+            border-radius: 50%;
+            -webkit-user-select: none;
+            cursor: move;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script src="drop.js"></script>
+<script>
+    var oDiv = document.getElementById('div1');
+    oDiv.addEventListener('mousedown', down, false);
+    function down(e) {//按下时
+        // e = e || window.event;//处理e兼容性问题，标准浏览器的事件对象在ie8级以下的版本不兼容，我们需要写兼容模式
+        this.x = this.offsetLeft;//盒子初始的位置
+        this.t = this.offsetTop;
+        this.mx = e.clientX;//按下时鼠标的位置
+        this.my = e.clientY;
+        if (this.setCapture) {
+            this.setCapture();//ie和火狐支持，谷歌不支持  绑定盒子和鼠标}
+            this.addEventListener('mousemove', move, false);
+            this.addEventListener('mouseup', up, false);
+        } else {//ie浏览器
+            /* document.onmousemove=move.bind(this);
+             document.onmouseup=up.bind(this);*/
+            //绑定的是move方法改变的是this关键字后返回的小函数
+            //需要给绑定的小函数起个名字，方便解绑时找到绑定元素
+            this.MOVE = move.bind(this);
+            this.UP = up.bind(this);
+            document.addEventListener('mousemove', this.MOVE, false);
+            document.addEventListener('mouseup', this.UP, false);
+        }
+    }
+    function move(e) {//移动时
+//设置移动后的盒子的位置
+        this.style.left = this.x + e.clientX - this.mx + 'px';
+        this.style.top = this.t + e.clientY - this.my + 'px';
+        //记录下鼠标移动的距离，this.speedX
+        if (!this.prevX) {//在if语句中操作，没有值的时候赋一个初始值
+            this.prevX = this.mx;//把鼠标按下时的坐标作为第一次
+        }
+        this.speedX = e.clientX - this.prev;
+        this.prev = e.clientX;//记录鼠标上一次的坐标
+    }
+    function up(e) {//松开时
+        if (this.releaseCapture) {
+            this.releaseCapture();
+            /*this.onmousemove = null;
+             this.onmouseup = null;*/
+            this.removeEventListener('mousemove', move, false);
+            this.removeEventListener('mouseup', up, false)
+        } else {
+            document.removeEventListener('mousemove', this.MOVE, false);
+            document.removeEventListener('mouseup', this.UP, false)
+        }
+        fly.call(this);
+        drop.call(this)
+    }
+    //单位时间内移动的距离称为速度
+    //标准浏览器每隔5~6ms会反映下鼠标移动
+    function fly() {
+        //摩擦力
+        clearTimeout(this.timer);
+        this.speedX *= 0.98;
+        //console.log(this.speedX);
+        //处理边界
+        var rSide = (document.documentElement.clientWidth || document.body.clientWidth) - this.offsetWidth;
+        var lSide = 0;
+        var duration = this.offsetLeft + this.speedX;
+        if (duration >= rSide) {
+            duration  = rSide;
+            this.speedX *= -1;//碰到边界之后往相反的方向运行
+        } else if (duration <= 0) {
+            duration = 0;
+            this.speedX *= -1;
+        }
+        //小球的位置=现在的位置+速度；
+        this.style.left = duration + 'px';
+        if (Math.abs(this.speedX) > 0.5) {//动画停止后，不在开启定时器
+            this.timer = window.setTimeout(() => {
+                fly.call(this)
+            }, 30)
+        }
+
+
+        //事件
+        //定时器积累
+        //this关键字
+        //动画边界，动画停止的条件
+    }
+   /* var g = 9.8;
+    var flag = 0;
+
+    function drop() {
+        clearTimeout(this.droptimer);
+        if (!this.dropSpeed) {
+            this.dropSpeed = 0
+        }
+        this.dropSpeed += g;
+        this.dropSpeed *= 1;
+        var tSide = (document.documentElement.clientHeight || document.body.clientHeight) - this.offsetHeight;
+        var duration = this.offsetTop + this.dropSpeed;
+        if (duration >= tSide) {
+            this.style.top = tSide + 'px';
+            this.dropSpeed *= -1;
+            flag++;//连续两次走到这里，就说明小球停下来
+        } else {
+            this.style.top = duration + 'px';
+            flag = 0
+        }
+
+        //this.style.top=this.offsetTop+this.dropSpeed+'px';
+        if (flag < 2) {
+            this.droptimer = window.setTimeout(() => {
+                drop.call(this)
+            }, 30)
+        }
+
+    }*/
+</script>

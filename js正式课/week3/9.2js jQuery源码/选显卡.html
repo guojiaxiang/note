@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 300px;
+            height: 350px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+        #box ul{
+            width: 300px;
+            padding: 0;
+        }
+        #box ul li{
+            width: 100px;
+            text-align: center;
+            background: #f5f5f5;
+            line-height: 50px;
+            float: left;
+            list-style: none;
+        }
+        #box ul li.active{
+            background: peru;
+        }
+
+        #box ul:after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        #box div{
+            width: 300px;
+            height: 100%;
+            background: yellow;
+            display: none;
+        }
+        #box div.active{
+            background: rebeccapurple;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li class="dd active">选项一</li>
+        <li class="ff">选项二</li>
+        <li class="ee">选项三</li>
+    </ul>
+    <div class="aa active">1</div>
+    <div class="bb">2</div>
+    <div class="cc">3</div>
+</div>
+</body>
+</html>
+<script>
+    var box=document.getElementById('box');
+    var lis=box.getElementsByTagName('li');
+    var divs=box.getElementsByTagName('div');
+    for(var i=0;i<lis.length;i++){
+        lis[i].index=i;
+        lis[i].onclick=function () {
+            for(var j=0;j<lis.length;j++){
+                lis[j].className='';
+                divs[j].className='';
+            }
+            this.className='active';
+            divs[this.index].className='active'
+        }
+
+    }
+
+</script>

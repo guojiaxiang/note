@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <style type="text/css">
+        .main{
+            width:1204px;
+            margin:0 auto;
+        }
+        .content{
+            margin-top:39px;
+        }
+        .content h3{
+            margin-bottom: 20px;
+            font-weight: normal;
+            font-size: 16px;
+            color: #2d2d2d;
+        }
+        .content .list{
+
+        }
+        .content .list ul{
+            margin-left:-65px;
+        }
+        .content .list li{
+            position: relative;
+            float: left;
+            width:251px;
+            height: 184px;
+            margin-left:65px;
+        }
+        .content .list li img{
+            width:100%;/*继承父元素的宽度*/
+        }
+        .content .list li .cont{
+            position: absolute;
+            left:0;
+            bottom: 0;
+            background-color: #fff;
+        }
+        .content .list li .cont .top{
+            width:221px;
+            padding:15px;
+            height: 30px;
+            overflow: hidden;
+            transition: all .3s;
+        }
+        .content .list li .cont .top:hover{
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="content main">
+    <h3>实战推荐</h3>
+    <div class="list">
+        <ul class="clear">
+            <li>
+                <img src="img/img01.jpg" alt="">
+                <div class="cont">
+                    <div class="top">
+                        <h4>Vue.js高仿饿了么外卖APP</h4>
+                        <h4>2016最火前端框架</h4>
+                        <p>vue.js 兼具 angular.js 和 react.js的优点，并剔除它们的缺点</p>
+                    </div>
+                    <div class="bot">
+                        <span class="money">￥198.0</span>
+                        <span class="study">1911人在学</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

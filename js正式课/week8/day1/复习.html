@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //面试题
+   // var ary=[1,1,5,2,2,4,3,5,7,6,8,9];
+    //  用双for循环就可以，需要注意数组塌陷的问题；
+    //  利用对象：对象的属性名不可以重复；
+    function Man(name) {
+        console.log(`HI , this is ${name}`)
+    };
+    Man.prototype.sleep = function (n) {
+        setTimeout(()=>{
+            console.log(`Wake Up after ${n} s`)
+        },n*1000);
+        return this;
+    };
+    Man.prototype.eat = function (str) {
+        console.log(`Eat ${str} ~`);
+        return this;
+    };
+
+</script>

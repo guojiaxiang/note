@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    div
+    <a href="###" id="a1"></a>
+</div>
+</body>
+</html>
+<script>
+    /*
+     * 1.创建元素节点        document.createElement('div')
+     * 2.创建元素节点
+     * 3.添加某个节点的尾部  父节点.appendChild(ele)
+     * 4.插入到某个节点之前
+     * 5.替换节点
+     * 6.删除节点
+     * 7.克隆节点
+     * 8.设置属性  ele.set
+     * 9.获取属性  ele.get
+     *
+     *
+     *
+     * */
+    var oP = document.createElement('p');
+    var oText = document.createTextNode('aaa');
+    oP.appendChild(oTxet);
+    var oDiv1 = document.getElementById('div');
+    var oA = document.getElementById('a1');
+    oDiv1.insertBefore(oP, oA);//p标签插入到a标签之前
+    oDiv1.replaceChild(oP, oA);//p标签替换a标签
+    oDiv.removeChild(oA);//删除A标签
+    var newA = oA.cloneNode(true);
+    document.body.appendChild(newA);//把克隆的A标签q添加到添加到body
+    oDiv1.setAttribute('zhufeng', 'peixun');
+    console.log(oDiv1.getAttribute('zhufeng'))//或取属性值
+</script>

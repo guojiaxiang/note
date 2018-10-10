@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /* var n=13;
+     function fn(n) {
+     alert(n);
+     n=14;
+     alert(n);
+     }
+     fn(n);
+     alert(n)*/
+    /*var n = 5;
+    function a() {
+        var n = 10;
+        function b() {
+            n++;
+            alert(n);
+        }
+
+        b()
+    }
+    a();
+    alert(n);*/
+   /* fn();
+    function fn() {
+        console.log(1);
+    }
+    fn();
+    var fn=13;
+    fn();
+    function fn() {
+        console.log(2);
+    }
+    fn();*/
+    /*console.log(fn);
+    fn();
+    if(9==8){
+        function fn() {
+            console.log(1);
+        }
+    }*/
+    var name ='珠峰';
+    var age ='300';
+    name =(function (name,age) {
+        arguments[0]='珠峰培训';//arguments[0]和形参name是一一映射的关系
+        age=age && 10;
+        console.log(name, age);
+    })(name);
+    console.log(name, age)
+
+</script>

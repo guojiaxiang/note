@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--<script>
+    /*
+    * ajax
+    *
+    * */
+    //创建ajax对象
+    var xhr=new XMLHttpRequest();
+    console.log(xhr.readyState+' UNSENT');//0：UNSENT 表示刚创建ajax对象
+    //打开ajax链接
+    xhr.open('get','data.json',true);
+    //可以设置请求头信息
+    xhr.setRequestHeader('hehe','you know');
+    //设置的请求头信息，是服务端来接收，服务端优先收到客户端的请求头信息，其次是请求体信息。【请求体放在xhr.send(这里边)】
+    console.log(xhr.readyState+' OPENED');//1：OPENED 表示打开一个url链接
+    //监听ajax状态
+    xhr.onreadystatechange=function () {
+        //console.log(xhr.readyState);// 2 3 4
+        //2 发送了ajax 接受到响应头的信息
+        if(xhr.readyState===2){
+            console.log(xhr.readyState+' HEADERS_RECEIVED');//HEADERS_RECEIVED received【收到】 发送了ajax请求，现在客户端已经收到了响应头的基本信息
+            var header=xhr.getAllResponseHeaders();
+            //返回响应头信息
+            //初始行=》记录响应头的一些基本信息
+            var date=xhr.getResponseHeader('date');
+            console.log(date);
+        }
+        //3：LOADING 响应体正在返回的途中
+        // 4：DONE   客户端完全接收到响应体的信息，ajax请求结束
+        if(xhr.readyState==4){
+            if(xhr.status==200){
+                console.log(xhr.responseText);
+            }
+        }
+    };
+    //如果请求方式设置成post的时候，会出现Request Payload 请求体信息
+    xhr.send();
+</script>-->
+<!--<script>-->
+    <!--//ajax中的异步情况-->
+    <!--var xhr=new XMLHttpRequest();-->
+    <!--xhr.open('get','data.json',true);//true 表示异步-->
+    <!--//异步代码不会进行等待-->
+    <!--xhr.onreadystatechange=function () {-->
+        <!--if(xhr.readyState==2){-->
+            <!--console.log(2);-->
+        <!--}-->
+        <!--if(xhr.readyState==4){-->
+            <!--console.log(4);-->
+        <!--}-->
+    <!--}-->
+    <!--xhr.send();-->
+    <!--console.log(5);-->
+<!--</script>-->
+<!--
+<script>
+    //ajax中的同步情况
+    var xhr=new XMLHttpRequest();
+    xhr.open('get','data.json',false);//true 表示异步
+    //异步代码不会进行等待
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==2){
+            console.log(2);
+        }
+        if(xhr.readyState==4){
+            console.log(4);
+        }
+    }
+    xhr.send();
+    console.log(5);
+    /*
+
+
+     当ajax设置为同步的时候，当xhr.send执行的时候表示ajax请求开始发送，【这时整个ajax属于同步状态，证明ajax数据没有返回，下面的代码不会进行执行（console.log(5);此时不会执行）】
+
+     ajax请求  是一个整体，在请求中的异步事件【onreadystatechange】，只是会发生在ajax请求的时候执行
+     onreadystatechange 这个异步事件和js中的异步事件没有关系。【当ajax设置为同步的时候】
+
+     所以我们可以得知，当xhr.send执行，以及当ajax数据拿到之后，才会去执行ajax整个状态中的异步事件【onreadystatechange】，
+     可是ajax数据拿到以后，状态已经变成4，这时候调用异步事件的时候，只有状态等于4的时候才会执行那个判断
+     */
+
+</script>-->
+<script>
+    //ajax中的同步情况
+    var xhr=new XMLHttpRequest();
+    xhr.open('get','data.json',false);//true 表示异步
+    xhr.send();
+    console.log(xhr.readyState);
+    //ajax状态已经到4了，再添加监听状态的事件已经没有意义了
+    //异步代码不会进行等待
+
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState==2){
+            console.log(2);
+        }
+        if(xhr.readyState==4){
+            console.log(4);
+        }
+    }
+
+    console.log(5);
+    /*
+
+
+     当ajax设置为同步的时候，当xhr.send执行的时候表示ajax请求开始发送，【这时整个ajax属于同步状态，证明ajax数据没有返回，下面的代码不会进行执行（console.log(5);此时不会执行）】
+
+     ajax请求  是一个整体，在请求中的异步事件【onreadystatechange】，只是会发生在ajax请求的时候执行
+     onreadystatechange 这个异步事件和js中的异步事件没有关系。【当ajax设置为同步的时候】
+
+     所以我们可以得知，当xhr.send执行，以及当ajax数据拿到之后，才会去执行ajax整个状态中的异步事件【onreadystatechange】，
+     可是ajax数据拿到以后，状态已经变成4，这时候调用异步事件的时候，只有状态等于4的时候才会执行那个判断
+     */
+
+</script>

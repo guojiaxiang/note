@@ -1,0 +1,140 @@
+header {
+    width: 100%;
+    /*position: relative;*/
+    /*background-color: #1c90f2;*/
+}
+
+header .main {
+    width: 1080px;
+    margin: 0 auto
+}
+
+header {
+    height: 50px;
+    padding: 15px 0;
+}
+
+header .logo {
+    width: 100px;
+    height: 56px;
+    float: left;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+header nav {
+    float: right
+}
+
+header nav ul li {
+    float: left;
+    margin-left: 50px;
+    line-height: 50px;
+}
+
+header nav ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    position: absolute;
+    z-index: 1;
+}
+
+.banner ul li.bg1{
+    background: url("../img/hero-bg-5.jpg") no-repeat;
+    background-size: cover;
+    width: 1519px;
+    height: 762px;
+    position: relative;
+    left: 0;
+    top: -80px;
+}
+.banner ul li.bg2{
+    background: url("../img/hero-bg-7.jpg") no-repeat;
+    background-size: cover;
+    width: 1519px;
+    height: 762px;
+    position: relative;
+    left: 0;
+    top: -80px;
+    display: none;
+}
+.banner ul li.bg3{
+    background: url("../img/hero-bg-8.jpg") no-repeat;
+    background-size: cover;
+    width: 1519px;
+    height: 762px;
+    position: relative;
+    left: 0;
+    top: -80px;
+    display: none;
+}
+
+.banner .main {
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.banner span {
+    font-size: 64px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: -450px;
+}
+
+@media screen and (max-width: 760px) {
+    .banner {
+        width: 100%
+    }
+
+    .banner .bg {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

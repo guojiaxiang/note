@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+
+            display: inline-block;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>
+            <span>用户名:</span>
+            <span id="username"></span>
+        </li>
+        <li>
+            <span>密码:</span>
+            <span id="password"></span>
+        </li>
+        <li>
+            <span>手机号:</span>
+            <span id="mobile"></span>
+        </li>
+        <li>
+            <span>邮箱:</span>
+            <span id="email"></span>
+        </li>
+        <li>
+            <span>个人主页:</span>
+            <span id="url"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    console.log(location.href);
+    let url = window.decodeURIComponent(location.href);
+    let reg = /[?&=]/g;
+    let ary = url.split(reg);
+    console.log(ary);
+    let obj = {};
+    for (var i =1;i<ary.length;i+=2){
+        obj[ary[i]] = ary[i+1]
+    }
+    console.log(obj);
+    for (var key in obj){
+        document.getElementById(key).innerHTML = obj[key]
+    }
+</script>

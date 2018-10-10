@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+     * 递归：函数调用函数叫做递归,死循环
+     *
+     *
+     *
+     *
+     *
+     * */
+   /* function fn() {
+        fn()
+    }
+    fn()*/
+    function sum(mun) {
+        if (mun == 0) {
+            return 0
+        }
+        return mun + sum(mun - 1)
+        //100+sum(99)
+        //100+99+sum(98)
+        //100+99+98+sum(97)
+        //...
+        //100+99+98+...+2+sum(1)
+        //100+99+98+...+0
+    }
+    console.log(sum(100));
+</script>

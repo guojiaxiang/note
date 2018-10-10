@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var ary = [4, 90, 5, 12, 0, 6];
+    //取中间的一个索引
+    function quickSort(ary) {
+        if (ary.length <= 1) {
+            return ary
+        }
+
+        var midIndex = Math.floor(ary.length / 2);
+        var mid = ary.splice(midIndex, 1);
+//创建左右手
+        var left = [], right = [];
+//让数组中的中间值和每一项比较，如果小于中间值则放到left，大于中间值放到right
+        for (var i = 0; i < ary.length; i++) {
+            if (ary[i] < mid) {
+                left.push(ary[i])
+            } else {
+                right.push(ary[i])
+            }
+        }
+        //函数调用函数就是递归
+        return quickSort(left).concat(mid, quickSort(right));
+        /*   function fn() {
+         i++;
+         if (i==10){
+         return
+         }
+         fn()
+         }
+         fn()*/
+    }
+    console.log(quickSort(ary));
+
+</script>

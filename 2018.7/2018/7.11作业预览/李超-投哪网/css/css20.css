@@ -1,0 +1,757 @@
+.header{
+    width: 100%;
+    background-color: #666666;
+
+}
+ .main{
+    margin: 0 auto;
+    width: 1006px;
+}
+.header .main .bannal{
+    float: left;
+}
+.header .bannal p  span{
+    margin-left: 25px;
+}
+.header .main .bannal p{
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.header .main .pananl{
+    float: right;
+}
+.header .main .pananl a{
+    line-height: 40px;
+    margin-left: 25px;
+    font-size: 14px;
+    color: #3399fe;
+}
+.header .main .pananl .mianf{
+    color: #66bb66;
+}
+/*nav*/
+.nav .mafan .logo{
+    float: left;
+    width: 299px;
+    height: 43px;
+    margin-top: 17px;
+    margin-right: 114px;
+}
+.nav .mafan .mainbav ul li{
+    float: left;
+    line-height: 81px;
+    margin-right: 34px;
+    position: relative;
+}
+.nav .mafan .mainbav ul .lutan{
+    margin-right: 0;
+}
+.nav .mafan .mainbav ul li a{
+    font-size: 18px;
+    color:#000000;
+}
+.nav .mafan .mainbav ul li i{
+    position: absolute;
+    border: 7px solid;
+    border-color: #000000 transparent transparent transparent;
+    top: 38px;
+    margin-left: 5px;
+}
+.nav .mafan .woyao{
+    float: right;
+    border-left: 2px solid #c2c2c2;
+    margin-top: 20px;
+}
+.nav .mafan .woyao p{
+    width: 105px;
+    height: 36px;
+    border: 1px solid #3399fe;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 28px;
+}
+.nav .mafan .woyao a{
+    font-size: 18px;
+    color: #3399fe;
+    position: relative;
+    line-height: 38px;
+}
+.nav .mafan .woyao p a i {
+    position: absolute;
+    border: 7px solid;
+    border-color: #3399fe transparent transparent transparent;
+    margin-left: 2px;
+    top: 10px;
+}
+/*carnival*/
+.carnival{
+    background: url("../img/carnival.png") no-repeat;
+    width: 100%;
+    height: 365px;
+    background-position: -200px 0;
+    position: relative;
+}
+.carnival .fifteens{
+    width: 236px;
+    height: 256px;
+    position: absolute;
+    top: 46px;
+    right: 250px;
+    background-color: rgba(107,107,107,0.58);
+}
+.carnival .fifteens .carpy{
+
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 52px;
+    margin-left: 20px;
+}
+.carnival .fifteens .carpe{
+    text-align: center;
+    color: #a9a9a9;
+    font-size: 38px;
+    line-height: 78px;
+    margin-bottom: 31px;
+}
+.carnival .fifteens .carpe span{
+    font-size: 68px;
+    color: #fea100;
+    font-weight: bold;
+}
+.carnival .fifteens .carps{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.carnival .fifteens .carps span{
+    display: inline-block;
+    width: 206px;
+    height: 34px;
+    background-color: #3399fe;
+    border-radius: 2px;
+}
+.carnival .fifteens .carps span a{
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 34px;
+}
+.carnival .fifteens .carpw{
+    float: right;
+}
+.carnival .fifteens .carpw a{
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 15px;
+}
+/*.conta*/
+.conta{
+    width: 100%;
+}
+.conta .mafansl{
+    height: 97px;
+
+}
+.conta .mafansl div p{
+    font-size: 18px;
+}
+.conta .mafansl div p  span{
+    color: #66cc6d;
+    font-size: 30px;
+}
+.conta .mafansl .cumuls{
+    float: left;
+    margin:15px 263px 15px 64px;
+}
+.conta .mafansl .dasa{
+     float: left;
+    margin-top: 15px;
+}
+.conta .mafansl .fengx{
+    float: right;
+    margin-right: 50px;
+    margin-top: 15px;
+}
+/*service*/
+.service .shagu{
+    border-bottom: 1px solid #c2c2c2;
+    border-top: 1px solid #c2c2c2;
+}
+.service .shagu .diyi{
+    float: left;
+    line-height: 25px;
+    text-align: center;
+    margin: 30px 258px 19px 47px;
+}
+.service .shagu .dier{
+    float: left;
+    line-height: 25px;
+    text-align: center;
+    margin-bottom: 19px;
+    margin-top: 17px;
+}
+.service .shagu .disan{
+    float: right;
+    line-height: 25px;
+    text-align: center;
+    margin-bottom: 19px;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+.service .shagu div p{
+    font-size: 16px;
+    color: #747474;
+}
+.service .shagu div h3{
+    margin-top: 11px;
+}
+/*guild*/
+.guild .thehotn{
+    border-bottom: 2px solid #3399fe;
+}
+.guild .thehotn .horn{
+    float: left;
+}
+.guild .thehotn .horn p{
+    font-size: 14px;
+    color:#090909;
+    line-height: 48px;
+}
+.guild .thehotn .horn i{
+    display: inline-block;
+    width: 19px;
+    height: 16px;
+    background: url("../img/horn.png") no-repeat;
+    vertical-align: middle;
+}
+.guild .thehotn .time{
+    float: right;
+}
+.guild .thehotn .time p{
+    font-size: 14px;
+    color:#4d4d4d;
+    line-height: 48px;
+}
+.guild .thehotn .time p span{
+    display: inline-block;
+    width: 74px;
+    height: 30px;background-color: #eeeeee;
+    border: 1px solid #c2c2c2;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+}
+.guild .thehotn .time p span a{
+    font-size: 12px;
+    color: #090909;
+    font-weight: bold;
+}
+/*smart*/
+.smart .tender .play{
+    float: left;
+    width: 361px;
+    height: 200px;
+    border: 1px solid #c2c2c2;
+    margin: 29px 44px 59px 41px;
+}
+.smart .tender .play p{
+    color: #3399fe;
+}
+.smart .tender .play .play-left{
+    float: left;
+}
+.smart .tender .play .play-left .leftll{
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 76px;
+    margin-top: 29px;
+    margin-left: 29px;
+}
+.smart .tender .play .play-left .leftyl{
+    font-size:28px;
+    font-weight: bold;
+    line-height: 46px;
+    margin-left: 29px;
+    margin-bottom: 46px;
+}
+.smart .tender .play .play-right{
+    float: right;
+    margin-top: 51px;
+    margin-right: 36px;
+}
+.smart .tender .play .play-right p{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.smart .tender .limit{
+    float: left;
+    margin-top: 28px;
+}
+.smart .tender .limit .ppdl{
+    font-size: 18px;
+    color: #454545;
+    font-weight: bold;
+    margin-bottom: 44px;
+}
+.smart .tender .limit .ppdl span{
+    margin-left: 35px;
+}
+.smart .tender .limit .ppde {
+    font-size: 14px;
+    color: #454545;
+    font-weight: bold;
+}
+.smart .tender .limit .ppde  .spy{
+    font-size: 48px;
+    color: #66cc66;
+    font-weight: bold;
+}
+.smart .tender .limit .ppde  .spe{
+    font-size: 18px;
+    color: #66cc66;
+    font-weight: bold;
+    margin-right: 17px;
+}
+.smart .tender .limit .ppds{
+    font-size: 18px;
+    color: #3399fe;
+    font-weight: bold;
+    width: 126px;
+    height: 36px;
+    border: 1px solid #3399fe;
+    text-align: center;
+    line-height: 36px;
+    margin-top: 33px;
+   /* margin-bottom: 58px;*/
+}
+.smart .tender .novice{
+    float: left;
+    margin-top: 28px;
+    margin-left: 67px;
+}
+.smart .tender .novice ul .liy{
+    margin-bottom: 48px;
+}
+.smart .tender .novice ul .npy{
+    font-size: 24px;
+    font-weight: bold;
+    color: #3399fe;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.smart .tender .novice ul .npe{
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    width: 126px;
+    height: 35px;
+    background-color: #b8b8b8;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+}
+.smart .tender .digital{
+    float: right;
+    margin-top: 27px;
+}
+.smart .tender .digital ul .lly{
+    margin-bottom:44px;
+}
+.smart .tender .digital ul .dny{
+    font-size: 18px;
+    color: #454545;
+    font-weight: bold;
+    margin-right: 41px;
+    margin-bottom: 24px;
+}
+.smart .tender .digital ul .dny span{
+    margin-right: 64px;
+}
+.smart .tender .digital ul .dne span{
+    font-size: 26px;
+    font-weight: bold;
+    color: #66cc66;
+    margin-right: 12px;
+}
+.smart .tender .digital ul .dne{
+    font-size: 14px;
+    color: #454545;
+}
+/*already*/
+.already .fling ul{
+
+    margin-left: 41px;
+}
+.already .fling ul li{
+    float: left;
+    margin-right: 62px;
+    border: 1px solid #d8d8d8;
+    width: 139px;
+    height: 192px;
+    margin-bottom: 62px;
+}
+.already .fling ul li .apy{
+    line-height: 32px;
+    text-align: center;
+    margin: 31px  0 24px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #454545;
+    width: 128px;
+    border-bottom: 1px solid #d8d8d8;
+}
+.already .fling ul li .ape{
+    font-size: 14px;
+    color: #454545;
+    text-align: center;
+}
+.already .fling ul li .ape span{
+    font-size: 26px;
+    color: #66cc66;
+    font-weight: bold;
+}
+.already .fling ul li .aps{
+    width: 139px;
+    height: 35px;
+    background-color: #b8b8b8;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 35px;
+    border-radius: 5px;
+}
+.already .fling ul .boxsd{
+    margin-right: 0;
+}
+.already .fling ul .boxsa .apss{
+    width: 139px;
+    height: 34px;
+    border: 1px solid #49a1fe;
+    border-radius: 5px;
+    font-size: 18px;
+    color:#49a1fe;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 35px;
+}
+/*jouena*/
+.jouena .lism  .media{
+    width: 462px;
+    margin-left: 41px;
+    float: left;
+}
+.jouena .lism  .medda{
+    float: right;
+}
+.jouena .lism  .media .joy{
+    font-size: 20px;
+    color: #000000;
+    line-height: 38px;
+    border-bottom: 1px solid #d8d8d8;
+}
+.jouena .lism  .media .joy span{
+    float: right;
+    font-size: 14px;
+    line-height: 38px;
+}
+.jouena .lism  .media .joy span a{
+    color: #090909;
+    font-weight: normal;
+}
+.jouena .lism  .media .joy span i{
+
+}
+.jouena .lism  .media .subject {
+    margin-bottom: 14px;
+}
+.jouena .lism  .media .subject .imgss{
+    float: left;
+    width: 162px;
+    height: 122px;
+    margin-top: 23px;
+}
+.jouena .lism  .media .subject .xinwenss{
+    float: right;
+    width: 298px;
+}
+.jouena .lism  .media .subject .xinwenss h4{
+    font-size: 18px;
+    color: #000000;
+    line-height: 23px;
+    margin-top: 23px;
+}
+.jouena .lism  .media .subject .xinwenss p{
+    font-size: 14px;
+    color: #484848;
+    line-height: 23px;
+}
+.jouena .lism  .media .subject .xinwenss p span{
+    float: right;
+}
+.jouena .lism  .media ul li{
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    color: #484848;
+    width: 460px;
+}
+.jouena .lism  .media ul li span{
+    float: right;
+}
+.jouena .lism  .media ul li i{
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: url("../img/dian.png")
+    no-repeat;
+    margin-right: 10px;
+}
+/*joinhands*/
+.joinhands .partner{
+    margin-bottom: 60px;
+}
+.joinhands .partner p{
+    float: left;
+    font-size:20px ;
+    color: #000000;
+    line-height: 62px;
+    width: 1006px;
+    margin-left: 41px;
+}
+.joinhands .partner div{
+    width: 200px;
+    height: 90px;
+    border: 1px solid #c5c5c5;
+    float: left;
+}
+.joinhands .partner .kingdee{
+    margin-left: 41px;
+    margin-right: 56px;
+}
+.joinhands .partner .kingdee img{
+    margin-top: 20px;
+}
+.joinhands .partner .sine{
+    margin-right: 56px;
+}
+.joinhands .partner .sine img{
+    margin-top: 22px;
+    margin-left: 20px;
+}
+.joinhands .partner .suis{
+
+}
+.joinhands .partner .suis img{
+    margin-top: 32px;
+    margin-left: 39px;
+}
+.joinhands .partner .casme{
+    float: right;
+}
+.joinhands .partner .casme img{
+    margin-top: 30px;
+    margin-left: 22px;
+}
+/*attention*/
+.attention {
+    background-color: #ececec;
+}
+.attention .ourselves{
+
+
+}
+.attention .ourselves .att-left{
+    float: left;
+    margin-left: 41px;
+}
+.attention .ourselves .att-left ul li{
+    float: left;
+    margin-right: 13px;
+    line-height: 36px;
+}
+.attention .ourselves .att-left ul li.lopu{
+    margin-right: 0;
+}
+.attention .ourselves .att-left ul li a{
+    font-size: 14px;
+    color: #727272;
+}
+.attention .ourselves .att-left p.attpy{
+    line-height: 47px;
+    float: left;
+}
+.attention .ourselves .att-left p.attpy a{
+    font-size: 14px;
+    color: #666666;
+    margin-right: 18px;
+}
+.attention .ourselves .att-left p.attpy span{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 33px;
+    height: 28px;
+    background-position:0 -4px ;
+    vertical-align: middle;
+    margin-right: 45px;
+}
+.attention .ourselves .att-left p.attpy i{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 33px;
+    height: 28px;
+    background-position:-41px -4px ;
+    vertical-align: middle;
+}
+.attention .ourselves .att-left p.attpe{
+    line-height: 47px;
+    float: right;
+
+
+}
+.attention .ourselves .att-left p.attpe a{
+    font-size: 14px;
+    color: #666666;
+}
+.attention .ourselves .att-left p.attpe span{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 28px;
+    height: 33px;
+    background-position:-97px -1px ;
+    vertical-align: middle;
+    margin-left: 45px;
+}
+.attention .ourselves .att-left p.attpe i{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 28px;
+    height: 33px;
+    background-position:-134px -2px ;
+    vertical-align: middle;
+    margin-left: 45px;
+    margin-right: 165px;
+}
+.attention .ourselves .att-right{
+    float: right;
+}
+.attention .ourselves .att-right .ppya{
+    font-size: 14px;
+    color: #666666;
+    line-height: 36px
+
+}
+.attention .ourselves .att-right .ppea{
+    font-size: 25px;
+    color: #666666;
+}
+.attention .ourselves .att-right .ppsa{
+    float: left;
+}
+.attention .ourselves .att-right a{
+    font-size: 14px;
+    color: #666666;
+    line-height: 33px;
+}
+.attention .ourselves .att-right .ppsa i{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 25px;
+    height: 18px;
+    background-position:-191px -16px ;
+    vertical-align: middle;
+    margin-left: 9px;
+
+}
+.attention .ourselves .att-right .ppwa{
+    float: right;
+}
+.attention .ourselves .att-right .ppwa i{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 21px;
+    height: 22px;
+    background-position:-240px -14px ;
+    vertical-align: middle;
+    margin: 0 9px;
+}
+/*blogroll*/
+.blogroll{
+    background-color: #666666;
+}
+.blogroll .links ul{
+   margin-left: 41px;
+}
+.blogroll .links ul li{
+     float: left;
+    line-height: 42px;
+    margin-top: 25px;
+    margin-right: 26px;
+}
+.blogroll .links ul li a{
+    font-size: 12px;
+    color: #d1d1d1;
+}
+.blogroll .links p{
+    margin-left: 9px;
+    font-size: 14px;
+    color: #d1d1d1;
+    width: 1006px;
+    text-align: center;
+    line-height: 42px;
+}
+.blogroll .links p.bpya{
+    float: left;
+}
+.blogroll .links p.bpya span{
+    height: 14px;
+    border-left: 1px solid #d1d1d1;
+    padding-left: 32px;
+}
+.blogroll .links p.bpya span.sppy{
+    margin-left: 31px;
+    margin-right: 34px;
+}
+.blogroll .links p.bpea{
+    float: left;
+}
+.blogroll .links .bpea{
+
+}
+.blogroll .links .bpea i{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 88px;
+    height: 33px;
+    background-position:0 -53px ;
+    vertical-align: middle;
+    margin-right: 33px;
+}
+.blogroll .links .bpea b{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 73px;
+    height: 29px;
+    background-position:-112px -61px ;
+    vertical-align: middle;
+    margin-right: 33px;
+}
+.blogroll .links .bpea em{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 31px;
+    height: 33px;
+    background-position:-203px -58px ;
+    vertical-align: middle;
+    margin-right: 33px;
+}
+.blogroll .links .bpea strong{
+    display: inline-block;
+    background: url("../img/xubit.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    background-position:-250px -60px ;
+    vertical-align: middle;
+}

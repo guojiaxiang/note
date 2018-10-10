@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script src="js/zepto.js"></script>
+<script>
+    //单指事件 touchstart touchmove touchend
+    //点击事件 click 300ms 毫秒延迟的问题
+    //符合事件 swipeLeft swipeRight swipe swipeUp swipeDown singleTap
+    //zepto 用法跟JQ一样，，但是这个是移动端常用的js库
+    $('#div1').swipeRight(function () {
+        $(this).css({
+            "transform":"translate(100px)",
+            "transition":"1s"
+        })
+    })
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: black
+        }
+    </style>
+</head>
+<body>
+<div id="box" ></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var bg = box.style.background; // 'black'
+
+    box.onclick = function () {
+         bg = box.style.background;//''
+        // black =》 red => green => yellow => white => black
+        if(bg == 'black'){
+            bg = 'red'
+        }else if(bg == 'red'){
+            bg = 'green'
+        }else if(bg == 'green' ){
+            bg= 'yellow'
+        }else if(bg == 'yellow'){
+            bg= 'white'
+        }else if(bg == 'white' ){
+            bg= 'black'
+        }
+        box.style.background = bg
+    }
+
+
+</script>
+</html>

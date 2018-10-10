@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.box p {
+    background-color: orangered;
+    cursor: pointer;
+    display: inline
+}
+
+.box ul li {
+    background-color: indigo;
+    width: 100px;
+    display: none;
+}
+
+.box:hover ul li{
+    display: block
+}

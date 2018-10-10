@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*直到顶部*/
+        /*body {*/
+            /*margin: 0;*/
+        /*}*/
+
+        /*#box {*/
+            /*width: 100%;*/
+            /*height: 500%;*/
+            /*background: -webkit-linear-gradient(red, orange, yellow, green, royalblue, blue, purple);*/
+            /*position: absolute;*/
+        /*}*/
+
+        /*#up {*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*border-radius: 50%;*/
+            /*font-size: 30px;*/
+            /*color: white;*/
+            /*background: gray;*/
+            /*line-height: 100px;*/
+            /*text-align: center;*/
+            /*position: fixed;*/
+            /*right: 0;*/
+            /*bottom: 0;*/
+            /*display: none;*/
+        /*}*/
+        /*固定时间的匀速直线运动*/
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: royalblue;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+
+</div>
+<div id="up">up</div>
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+    /*
+     * 同步异步：JS是单线程运行的，在JS中分为同步和异步，也就是浏览器给我们提供的主任务队列和等待任务队列
+     * 同步：将任务按照顺序依次执行，当前任务没有完成，下面的任务不会开始；
+     * 异步：在任务执行的时候，我们遇到异步执行的代码，由于等待的时间不确定【过长】，我们直接跳过，继续执行下面的同步代码。
+     *      等同步代码执行结束，再到异步队列中看是否有时间已经到了JS代码，让后再放入同步队列中执行
+     * 异步代码：所有的事件，onclick onmouseover
+     *         所有的定时器：setTimeout setInterval
+     *         一般情况下的ajax都是异步执行
+     *         回到函数【牵强】
+     *
+     *
+     * */
+    //同步异步
+    /*console.log(1);
+     setTimeout(()=>{
+     console.log(2);
+     },0);
+     console.log(3);*/
+    //
+    //    console.log(1);
+    //    setTimeout(()=>{
+    //        console.log(2);
+    //    },100);
+    //    setTimeout(()=>{
+    //        console.log(3)
+    //    },200);
+    //    for(var i=0;i<1000;i++){
+    //        setTimeout(()=>{
+    //            console.log(4);
+    //        },0)
+    //    }
+    //    console.log(5);
+    //注意如果定时器中的时间为0，会根据你所用的浏览器按最低的毫秒数来执行，谷歌浏览器是5-6ms，ie浏览器是10-13ms
+    //    setTimeout(()=>{
+    //        console.log(1);
+    //    },0);
+    //    while(true){//死循环
+    //
+    //    }
+    /*
+     * 回调函数：将一个普通函数b当做参数传给函数a【宿主函数】的时候，当a执行的时候，b也执行，这种机制就叫做回调函数
+     * 常用的回调函数：forEach map setTimeout setInterval sort $.each
+     * */
+    //function a(b) {
+    //    b()
+    //}
+    //function b() {
+    //
+    //}
+    //a(b);
+
+
+    //    var str = `9月13日凌晨1点，苹果将于Apple Park内的乔布斯剧院发布新iPhone系列。
+    //虽然还有不到一周时间，但新iPhone的命名貌似已经被确认下来，而且还长的惊人！`;
+    //    var str2 = `敬请期待`;
+    //    function interval(ele, time, str, callback) {
+    //        var step = 0;
+    //        ele.timer = setInterval(function () {
+    //            //for(var i=0;i<str.length;i++){
+    //            box.innerHTML += str[step++];
+    //            if (step >= str.length) {
+    //                clearInterval(ele.timer);
+    //                callback && callback.call(ele);////?????验证有没有回调函数，如果有则执行callback.call(ele)
+    //            }
+    //            //}
+    //        }, time);
+    //
+    //    }
+    //    interval(box, 20, str, function () {
+    //        interval(box, 1000, str2);
+    //        //str2.innerHTML+=`敬请期待`
+    //    });
+
+    /*动画：css动画  JS动画
+     css动画：
+     * transition：过度动画
+     * animation：帧动画
+     * transform：变形（不属于动画）
+     *
+     * JS动画：
+     * 定时器
+     * requestAnimationFrame：帧动画
+     * canvas：h5的一个标签【画布】，可以在画布中做很多动画效果。
+     *
+     *
+     * Flash动画
+     *
+     *
+     * */
+    /*固定步长的动画
+     *
+     *
+     * */
+    //有问题？
+    //    var target=utils.win('clientWidth')-box.offsetWidth;
+    //    var step=0;
+    //    box.timer=setInterval(()=>{
+    //        step+=17;
+    //        if(step>=target){
+    //            clearInterval(box.timer);
+    //            utils.css(box,'left',target);
+    //            return
+    //        }
+    //        utils.css(box,'left',step)
+    //    },17)
+    /*
+     * 固定时间的动画之回到顶部
+     * */
+
+    //    var up = document.getElementById('up');
+    //    window.onscroll = function () {
+    //        let winH = utils.win('clientHeight');
+    //        let winT = utils.win('scrollTop');
+    //        if (winT > winH) {
+    //            up.style.display = 'block'
+    //        } else {
+    //            up.style.display = 'none'
+    //        }
+    //
+    //    };
+    //
+    //    var duration = 2000;
+    //
+    //    up.onclick = function () {
+    //        var timer = 0;
+    //        var speed = utils.win('scrollTop') / duration;
+    //        // utils.win('scrollTop',0)
+    //        let winS = utils.win('scrollTop');
+    //        //固定步长
+    //        up.timer = setInterval(() => {
+    //            /* winS -= 50;
+    //             utils.win('scrollTop', winS);
+    //             if (winS <= 0) {
+    //             clearInterval(up.timer);
+    //             utils.win('scrollTop', 0);
+    //             return
+    //             }*/
+    //
+    //            timer+= 20;
+    //
+    //            if ( timer>=duration) {
+    //                console.log(timer);
+    //                clearInterval(up.timer);
+    //                utils.win('scrollTop', 0);
+    //                return
+    //            }
+    //            utils.win('scrollTop', winS-speed * timer)
+    //        }, 17)
+    //    }
+
+    /*
+    * 固定时间的匀速直线运动
+    * time:所花费的时间
+    * duration：总时间
+    * change：终点-开始的位置=>要走的距离
+    * begin：开始的位置
+    * */
+    function linear(time,duration,change,begin) {
+        return time/duration*change+begin;
+    };
+    let time=0,duration=2000,begin=utils.css(box,'left');
+    let target=utils.win('clientWidth')-box.offsetWidth;
+    box.onclick=function () {
+        this.timer=setInterval(()=>{
+            time+=17;
+            if(time>=duration){
+                clearInterval(this.timer);
+                utils.css(box,'left',target);
+                return
+            }
+            utils.css(box,'left',linear(time,duration,target-begin,begin))
+        })
+    }
+</script>
