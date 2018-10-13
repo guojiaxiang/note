@@ -22,16 +22,58 @@
  1、内置模块【安装node之后天生自带的模块】 fs http url path...
  2、第三方模块【别人开发好的模块，我们进行下载使用，通过npm包管理器区npmjs.com下载】下载完成之后，多出一个node_modules文件 例如：less jquery vue bootstarp...
  3、自定义模块【自己写的js文件，当做一个模块进行调用】
+ 【第三方模块】
  【跑环境】
  跑环境又称为部署环境：
  1、我们在开发项目的时候，会先执行npm init //形成一个模块清单，此时文件会多出一个文件【package.json】//这文件就是模块清单
-    npm init 生成模块清单
+    npm init 生成模块清单 npm init -y
     【注意】：模块清单会默认取当前js父级文件夹的名称，所以需要注意：
         1、不要在清单中写注释
         2、模块清单的名称不要用中文
         3、模块清单的名称不要和安装的模块名称相同
         4、模块清单的名称不能有大写
- 2、我们可以通过npm install xxx
+ 2、我们可以通过
+    dependencies//生产环境：上线的时候需要的模块
+    DevDependencies//开发环境：开发人员再编写项目，测试项目的时候使用的模块
+    npm install xxx | npm install --save//默认安装到生产环境 
+    npm install xxx --save-dev// npm install xxx -D//将模块安装到开发环境
+    npm install xxx@1.11.3//安装具体对应版本的模块
+//yarn【包管理器】来自于Facebook 特点是快
+yarn add xxx
+yarn add xxx@1.11.3
+yarn remove xxx
+yarn install //跑环境
+//brew【包管理器】
+
+在本地生成一个文件 node_modules ，这里面添加的都是我们安装的第三方模块
+当我们本地编写代码结束后，提交到远程共享给别的时候，不需要添加node_modules这个文件，我们可以创建一个忽略文件.gitignore【他是一个隐藏文件】里面输入的不需要提交的内容。
+
+这样做的好处是：提交速度变快，别人下载代码变快
+当别人拿到你的模块清单的时候，会将你的模块依次进行安装【npm install/yarn install】
+，这种方式就叫做跑环境。
+【自定义模块】
+node规定：每一个js都是一个模块，它们之间可以进行相互调用
+运行node node b.js
+通过exports/require命令进行导入和导出
+【导出】
+module exports xxx【对象】
+exports.name
+【导入】
+require("./详细路径")
+注意：只有自定义模块有路径，第三方模块和内置模块没有路径【如果没有路径，会先取第三方模块，如果没有的话，会再取内置模块】
+ */
+ /* 
+ es6当中的导入导出【框架当中会用到es6的导入导出】
+ 【导出】
+ 需要在script中添加type='modules'这个属性；内嵌和外链都需要添加
+ export 导出的对象{name，fn}
+ export var name='zf'|export function fn(){}
+ export default//默认导出的内容
+ 【导入】
+ import xxx【变量名】 from '路径'
+ import * as xxx from '路径' //xxx就会变成一个对象 xxx.name xxx.fn
+ import {name，fn} from '路径' //解构赋值中的导入
+ 
  
  */
 </script>
