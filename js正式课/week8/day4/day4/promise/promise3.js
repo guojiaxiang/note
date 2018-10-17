@@ -59,6 +59,8 @@ class Promise {
                 try {
                     let x = fulfilledCB(this.value);
                     if(x instanceof Promise){
+                        // 1、实现连then
+                        // 2、
                         x.then(resolve,reject);
                         return
                     }
