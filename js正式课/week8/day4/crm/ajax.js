@@ -1,60 +1,35 @@
-function ajax(option={}) {
+function ajax(option={}){
     let {
-        url = null,
-        method = 'get',
-        async = true,
+        url=null,
+        method='get',
+        async=true,
+        data=null,
         cache = true,
-        data = null,
-        dataType = 'json',
-        success = new Function(),
-        error = new Function(),
-    }=option;
-    if (Object.prototype.toString.call(data)==='[object Object]') {
-        var str = ``;
-        for (var key in data) {
-            str += `${key}=${data[key]}&`
-        }
-        str = str.slice(0,str.length-1);
-        //str = str.replace(/&$/g,'');
-        if (method === 'get') {
-            url += '?'+str;
-        }
-    }
-    if (cache === false && method === 'get') {
-        if (url.includes('?')) {
-            url += `&_=${Math.random()}`
-        }else {
-            url += `?_=${Math.random()}`
-        }
-    }
-    let xhr = new XMLHttpRequest();
-    return new Promise((resolve,reject)=>{
+        dataType='json'
+    }= option;
+
+    // post 将接口参数变成一个对象
+    // cache 在get后面添加一个随机数
+    // dataType 如果是xml的时候，需要转化为xhr.responseXML
+    
+    return new Promise((res,rej)=>{
+        var xhr = new XMLHttpRequest();
         xhr.open(method,url,async);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (/^(2|3)\d{2}$/.test(xhr.status)) {
-                    var newData = null;
-                    if (dataType === 'json') {
+        xhr.onreadystatechange =function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    if(dataType=='json'){
                         try{
-                            newData = JSON.parse(xhr.responseText);
-                        }catch (e) {
-                            newData = xhr.responseText;
+                            res(JSON.parse(xhr.responseText))
+                        }catch(e){
+                            res(xhr.responseText)
                         }
-                    }else if (dataType === 'xml') {
-                        newData = xhr.responseXML;
-                    }
-                    resolve(newData);
-                }else if (/^[45]\d{2}$/.test(xhr.status)) {
-                    reject(xhr.statusText);
+                    }                 
+                }else{
+                    rej(xhr.statusText)
                 }
             }
-        };
-        if (method === 'post' && data instanceof Object) {
-            data = JSON.stringify(data);
-            xhr.send(data);
-            return;
         }
-        xhr.send(data);
-    });
-
+        xhr.send(data)
+    })
 }

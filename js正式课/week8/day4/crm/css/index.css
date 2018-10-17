@@ -28,9 +28,20 @@ a{
 #box header span{
     flex:1;
     text-align: center;
+    font-size: 18px;
+    line-height: 30px;
     background: rgb(97, 175, 238);
 }
 ul li span{
     flex:1;
     text-align: center
+}
+ul li{
+    line-height: 30px;
+}
+ul li:nth-child(even){
+    background: rgb(146, 224, 238);
+}
+ul li:hover{
+    background: rgb(231, 233, 152);
 }
