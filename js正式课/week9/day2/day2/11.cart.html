@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- axios 服务端和前端都能用  基于promise  -->
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <div id="app" class="container">
     <table class="table table-bordered">
       <caption>
@@ -36,8 +36,8 @@
       </tr>
     </table>
   </div>
-  <script src="node_modules/axios/dist/axios.js"></script>
-  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/axios/dist/axios.js"></script>
+  <script src="../node_modules/vue/dist/vue.js"></script>
   <script>
     new Vue({
       el:'#app',
@@ -82,7 +82,7 @@
         if(lists){
            this.productLists = lists
         }else{
-          axios.get('/cart.json').then((res) => {
+          axios.get('./cart.json').then((res) => {
             this.productLists = res.data;//我们的请求回来的数据
           });
         }
