@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/sortablejs/Sortable.js"></script>
+</head>
+<body>
+  <!-- 学生成绩表格 -->
+  <!-- bootstrap 都是分为基础和增强 -->
+  <table id="app" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>学生姓名</th>
+        <th>语文成绩</th>
+        <th>数学成绩</th>
+        <th>英语成绩</th>
+      </tr>
+    </thead>
+    <tbody v-draggable>
+      <tr v-for="l in lists">
+        <td>{{l.name}}</td>
+        <td>{{l.chinese}}</td>
+        <td>{{l.math}}</td>
+        <td>{{l.english}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    new Vue({
+      el:'#app',
+      directives:{
+        draggable(el,bindings,vnode){
+          Sortable.create(el,{
+            animation:200
+          });
+        }
+      },
+      data:{
+        lists:[
+          {id:1,name:'张三',chinese:99,english:30,math:88},
+          {id:2,name:'李四',chinese:69,english:90,math:32},
+          {id:3,name:'王五',chinese:88,english:72,math:65},
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

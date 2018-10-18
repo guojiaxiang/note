@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='(a,index) in ary' :v-key='index'>{{a}}</li>
+        </ul>
+        <button @click='flag=!flag'>切换</button>
+        <div v-if='flag'>
+            <label for="username">用户名</label>
+            <input type="text" id='username' placeholder="请输入用户名" key='1'>
+        </div>
+        <div v-else>
+            <label for="password">密码</label>
+            <input type="text" id="password" placeholder="请输入密码" key='2'>
+        </div>
+    </div>
+
+</html>
+<script type='text/javascript' src='../NOde_modules/胜利ue/dist/胜利ue.js'></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            ary:['苹果','香蕉','梨','菠萝'],
+            flag:true,
+        }
+    })
+    console.log(vm._data);
+</script>
+
+</body>
+</html>

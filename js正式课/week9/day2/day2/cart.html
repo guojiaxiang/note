@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <!-- axios 服务端和前端都能用 基于promise-->
+    <div id="app">
+        <table class='table table-bordered'>
+            <caption>
+                <h3 class='text-center text-danger '> 购物车 </h3>
+            </caption>
+            <tr>
+                <th class='text-center'>是否选中 <input type="checkbox"></th>
+                <th class='text-center'>商品名称</th>
+                <th class='text-center'>商品价格</th>
+                <th class='text-center'>商品数量</th>
+                <th class='text-center'>商品小计</th>
+                <th class='text-center'>操作</th>
+
+            </tr>
+            <tbody>
+
+                <tr v-for='product in productLists'>
+                    <td><input type="checkbox" v-model='product.isChecked'></td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td><input type="text" v-model='product.productCount'></td>
+                    <td>{{product.productCount*product.productPrice}}</td>
+                    <td><button class="btn btn-danger">删除</button></td>
+                </tr>
+                <tr>
+                    <td colspan='6'>总价{{total}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+
+</html>
+<script src='../node_modules/axios/dist/axios.js'></script>
+<script src='../node_modules/vue/dist/vue.js'></script>
+<script type="text/javascript" charset="utf-8">
+    new Vue({
+        el: "#app",
+        data: {
+            productLists: [], //默认为空数组
+
+        },
+        watch: {
+            productLists: {
+                handle() {
+                    localStorage.setItem('lists',JSON.stringify(this.productLists))
+                }
+            }
+        },
+        methods: {
+            remove(current) {
+                let falg = window.confirm('删除？')
+                if (falg) {
+                    this.productLists = this.productLists.filter(p => current != p)
+                }
+
+            }
+
+
+        },
+
+        computed: {
+            total() {
+                return this.productLists.reduce((prev, next, currenIndex, arr) => {
+                    return next.isChecked ? prev + next.productPrice * next.productCount : prev
+                }, 0)
+            },
+            checkAll: {
+                get() {
+                    return this.productLists.every(p => p.isChecked)
+
+                },
+                set(flag) {
+                    this.productLists.forEach(p => p.isChecked = flag)
+                }
+            }
+
+
+        },
+        mounted() {
+            let lists=JSON.parse(localStorage.getItem('lists'));
+            if(lists){
+                this.productLists()
+            }
+            axios.get('./cart.json').then((res) => {
+                this.productLists = res.data;
+                console.log(this.productLists)
+            });
+        }
+    })
+</script>
