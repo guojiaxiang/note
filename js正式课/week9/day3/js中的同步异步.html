@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+ /* 
+ 浏览器是多线程的，js是单线程的。
+ 当访问一个页面的时候，会发起多个请求，每个请求都需要一个线程来处理。
+
+ 因为js是单线程，所以不能处理多个任务，所以浏览器会给它分配 1.主任务队列 2.等待任务队列
+ 
+ 在js当中异步操作
+ 【宏任务】
+ 定时器
+ ajax
+ 事件
+ 回调函数【分情况】
+ setImmediate //node当中的定时器，但是没有时间
+
+ 处理异步代码
+ 【微任务】
+ Promise
+ async await//es2017 提供的管控异步的方法
+ process.nextTick//node当中的方法，会将回调函数放到异步当中的开头位置【放到异步代码开头的位置，也就是说异步代码它先执行】
+
+
+ 代码执行顺序
+ 同步=》微任务=》宏任务
+
+ */
+function fn2() {
+    console.log(2);
+    
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            res()
+        }, 0);
+    })
+}
+//async 会将函数变成一个promise的实例
+async function fn() {
+    // return 999
+    var res=await fn2();//await 后面一般添加异步的操作，它会执行这里面的方法。await：会执行fn2中的代码，执行结束之后，开始执行主栈上的同步，同步完成之后，开始执行await下面的代码
+    console.log(1000);
+    
+}
+fn();
+console.log(1);
+
+// fn().then(res=>{//默认返回promise实例
+//     console.log(res);//返回值是什么，res就是什么
+    
+// },res=>{
+    // fn函数中有报错，或者await函数中有报错，执行rej
+// })
+</script>
