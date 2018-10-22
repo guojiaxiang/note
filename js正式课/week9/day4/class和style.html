@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a {
+            font-size: 30px
+        }
+
+        .b {
+            color: blue;
+        }
+
+        .c {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="a b c">普通样式</div>
+        <div class='c' :class="classAry">数据类名</div>
+        <div :class="{a:classA,b:'b',c:'c'}">另一种写法</div>
+        <div :class="computedClass">computed</div>
+        <div :style="styleA">AAAAA</div>
+        <div :style="styleB">BBBBB</div>
+        <div :style='{color:"yellow",...styleB}'>CCCCC</div>
+        <div :style='[styleA,styleC]'>CCCCC</div>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            classAry: ['a', 'b'],
+            classA: true,
+            styleA: 'font-size:30px',
+            styleB: {
+                fontSize: '30 px',
+                background: 'red'
+            },
+            styleC:{color:'green',fontSize:'30px'}
+
+        },
+        computed: {
+            computedClass() {
+                return Math.random() > 0.5 ? 'a' : 'b'
+            }
+        }
+    })
+</script>
