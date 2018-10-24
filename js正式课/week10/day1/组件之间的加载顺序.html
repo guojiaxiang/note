@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+    <template id='box'></template>
+    <template id='box'>
+        <!-- template里面定义的标签，有且只能有一个 -->
+        <div>123</div>
+    </template>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    // 在加载vue的时候，会先加载子组件中的dom，然后再加载父级组件当中的元素，渲染dom属于异步渲染
+    let parent = {
+            mounted() {
+                console.log('11111');
+
+            },
+            data() {
+                return {
+                    msg: 'zf'
+                }
+            },
+            template: '<div>{{msg}}</div>',
+            components: {
+                child
+            }
+        },
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+            mounted() {
+                console.log('2222222');
+
+            },
+            //注册
+            components: {
+                parent
+            }
+        })
+</script>

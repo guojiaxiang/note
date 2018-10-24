@@ -36,20 +36,21 @@ let QQmusic = (function () {
         $oPs = $songWord.find('p')
 
     }
-function btnRotate() {
-    myAudio.addEventListener('canplay', function () {
-        playMusic()
-    },false);
-}
+
+    function btnRotate() {
+        myAudio.addEventListener('canplay', function () {
+            playMusic()
+        }, false);
+    }
 
 
     function playMusic() {
-        if ($playBtn.hasClass('rotateClass')) {//判断是否在播放中
-            $playBtn.removeClass('rotateClass');//移除类名，不在转动
-            myAudio.pause()//音频文件播放
+        if ($playBtn.hasClass('rotateClass')) { //判断是否在播放中
+            $playBtn.removeClass('rotateClass'); //移除类名，不在转动
+            myAudio.pause() //音频文件播放
         } else {
-            $playBtn.addClass('rotateClass');//添加类名，开始转动
-            myAudio.play();//音频文件开始播放
+            $playBtn.addClass('rotateClass'); //添加类名，开始转动
+            myAudio.play(); //音频文件开始播放
             computedTime()
 
         }
@@ -58,6 +59,7 @@ function btnRotate() {
     $playBtn.singleTap(function () {
         playMusic()
     });
+
     function formatTime(time) {
         let m = parseInt(time / 60);
         m = m < 10 ? "0" + m : m;
@@ -68,36 +70,36 @@ function btnRotate() {
 
     function computedTime() {
         let duration = myAudio.duration;
-        $endTime.html(formatTime(myAudio.duration));//音频文件播放的总时间，单位是秒
+        $endTime.html(formatTime(myAudio.duration)); //音频文件播放的总时间，单位是秒
         timer = window.setInterval(function () {
             let curT = myAudio.currentTime;
             $runTime.html(formatTime(curT));
             if (curT >= duration) {
                 clearInterval(timer);
-                $songWord.css("transform","translate(0)");
+                $songWord.css("transform", "translate(0)");
                 $playBtn.removeClass("rotateClass");
             } else {
-                matchLyric();//匹配歌词
+                matchLyric(); //匹配歌词
             }
             $innerL.css("width", curT / myAudio.duration * 100 + '%')
         }, 500)
     }
 
     function matchLyric() {
-//获取已播放时间的分钟数和秒数，然后所有的p标签中筛选出相同分钟数和秒数的p标签，给这个p标签添加类名active
-        let curTime=formatTime(myAudio.currentTime);
-        let [m,s]=curTime.split(":");
-        let $curP=$oPs.filter(`[m="${m}"]`).filter(`[s="${s}"]`);
-        if($curP.length===0) return;//一个都没找到
-        if($curP.hasClass("active")) return;//已添加这个类名
+        //获取已播放时间的分钟数和秒数，然后所有的p标签中筛选出相同分钟数和秒数的p标签，给这个p标签添加类名active
+        let curTime = formatTime(myAudio.currentTime);
+        let [m, s] = curTime.split(":");
+        let $curP = $oPs.filter(`[m="${m}"]`).filter(`[s="${s}"]`);
+        if ($curP.length === 0) return; //一个都没找到
+        if ($curP.hasClass("active")) return; //已添加这个类名
         $curP.addClass("active").siblings().removeClass("active");
-        let index=$curP.index();
-        if(index>2){
-            posY-=$curP[0].offsetHeight;//累加向上移动的距离，由于向上移动的距离是负值，所以写成类减
-            $songWord.css("transform",`translateY(${posY}px)`);
+        let index = $curP.index();
+        if (index > 2) {
+            posY -= $curP[0].offsetHeight; //累加向上移动的距离，由于向上移动的距离是负值，所以写成类减
+            $songWord.css("transform", `translateY(${posY}px)`);
         }
     }
-let posY=0;
+    let posY = 0;
     return {
         init: function () {
             setHeight();
