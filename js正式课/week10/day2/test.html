@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="msg"></a>
+        <child :nnn='msg'></child>
+    </div>
+    <template id="box">
+        <div >
+            99999
+        </div>
+    </template>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let child = {
+        template:'#box',
+        props:['nnn'],
+        mounted(){
+            console.log(this.nnn)
+        }
+    }
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'zf',
+        },
+        components: {
+            child
+        }
+    })
+</script>
