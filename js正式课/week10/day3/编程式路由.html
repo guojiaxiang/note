@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <a href="#/home">首页</a>
+            <a href="#/list">列表页</a>  -->
+        <router-link to='/home'>首页</router-link>
+        <router-link to='/list'>列表页</router-link>
+        <!-- 路由匹配的组件显示到这 -->
+        <router-view></router-view>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<!-- vue-router必须在vue下边，要保持依赖关系 -->
+<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+
+<script>
+    // 创建两个组件
+    let home = {
+        template: '<div>首页</div><button @click="fn">回到首页</button></div>',
+        fn() {
+            // this.$router.back()//回到上个路径
+            //this.$router.go(-1)
+            this.$router.replace('/list')//将当前的路将替换并跳转
+            //['/','/list','/home']
+        }
+    }
+    let list = {
+        template: '<div>列表页<button @click="fn">回到首页</button></div>',
+        methods: {
+            fn() {
+                this.$router.push('/home') //让页面强制回到某个路径
+
+            }
+        }
+    }
+    let error={
+        template:'<div>404</div>'
+    };
+    
+    // 创建组件所对应的映射表，[访问什么路径跳转什么组件]
+    let routes = [{
+            path: '/',
+            component: home
+        },
+        {
+            path: '/home',
+            component: home
+        },
+        {
+            path: '/list',
+            component: list
+        },// },{
+        //     path: '*',
+        //     component: home
+        // },//虽然可以在输错的情况下跳转到首页，但是路径没有变，我们洗完用户输错的时候，路径发生改变
+        {
+            path: '*',
+            redirect: '404'
+        }//【路径重定向】当用户输入网址错误的时候，自动跳转到404页面，而且路径也会修改
+    ]
+    // 将路由的映射表放入到vue-router提供的自定义类当中
+    let router = new VueRouter({
+        routes: routes,
+        mode: 'history', //h5提供的方法，history.pushState()不能点击回车跳转，只有上线的时候，才会用到
+        linkActiveClass: 'active'
+    })
+    new Vue({
+        el: '#app',
+        /*  components: {
+             home,
+             list
+         }, */
+
+        router //只要router在选项添加，组件都可以使用$router这个方法，
+    })
+</script>
