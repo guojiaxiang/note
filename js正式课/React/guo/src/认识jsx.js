@@ -24,13 +24,13 @@ function b(){
 let zfpx=111111;
 // let a = <div>123<div>{zfpx}</div></div>
 let obj={a:'999'};
-// let a = <div>123<div>{obj.a}</div></div>
+let a = <div>123<div>{obj.a}</div></div>
 let arr=[1,2,3,4,5,6,'qqq'];
 // let a = <div>123<div>{arr}</div></div>;
 // let a = <div>123<div>{false}</div></div>
 // let a = <div>123<div>{b()}</div></div>
 // let a = <div>123<div style={{width:'100px' ,color:'red'}}>{zfpx}</div></div>
-let a = <div>123<div style={{color:'red'}} className='container'>{zfpx}</div></div>
+// let a = <div>123<div style={{color:'red'}} className='container'>{zfpx}</div></div>
 console.log(a);
 // render方法
 // 1.参数1是虚拟的DOM元素；参数2是将要挂载的元素；
