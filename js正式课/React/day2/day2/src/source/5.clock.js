@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 let  a;
 function tick(){
-    // 返回一个虚拟的DOm元素
+    // 返回一个虚拟的DOM元素
     a = new Date().toLocaleString();
     /*let a = new Date().toLocaleString()
     ReactDOM.render(<div>{a}</div>,document.querySelector("#root"));*/

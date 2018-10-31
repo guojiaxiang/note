@@ -3,7 +3,7 @@
 // 第一种： 函数声明
 // 1.组件的名字首字母必须大写；为了和JSX元素进行区分；
 // 2.组件中必须返回一个顶级的react元素；
-// 3.组件定义之后，可以向react元素一样使用；
+// 3.组件定义之后，可以像react元素一样使用；
 import React from "react";
 import ReactDOM from "react-dom";
 function Build(props) {
