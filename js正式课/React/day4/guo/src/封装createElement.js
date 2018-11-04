@@ -1,10 +1,3 @@
-1、forEach，for in，for，for of的区别
-    1）forEach不支持return
-    2）for(let key in arr){} //key会变成字符串类型，包括数组的私有属性，也可以打印出来，多用于对象
-    3）for(let val of arr){}//支持return，并且是值of数组（不能遍历对象），使用Object.keys()可以将对象的key作为新的数组，这时for of就可以遍历对象了
-    
-2、 封装createElement 原理
-```
 class Element {
     constructor (type,attr,children){
         this.type=type;
@@ -45,5 +38,3 @@ let ReactDOM={
 };
 let a=React.createElement("div",{a:1,b:2,className:"btn"},"珠峰",React.createElement('span',null,11234));
 ReactDOM.render(a,window.root)
-
-```

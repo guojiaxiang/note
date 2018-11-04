@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="title"></div>
+    <div id="content"></div>
+    <script>
+        let title = document.getElementById("title");
+        let content = document.getElementById("content")
+
+        let state = {
+            title: {
+                color: "red",
+                text: "标题1"
+            },
+            content: {
+                color: "blue",
+                text: "内容"
+            }
+        }
+
+        function renderTitle() {
+            title.innerHTML = state.title.text;
+            title.style.color = state.title.color
+        }
+
+        function renderContent() {
+            content.innerHTML = state.content.text;
+            content.style.color = state.content.color
+        }
+
+        function renderApp() {
+            renderTitle();
+            renderContent();
+        }
+        renderApp();
+        const CHANGE_TITLE="CHANGE_TITLE";
+        function dispatch(action) {
+            switch (action.type) {
+                case "CHANGE_TITLE":
+                    state={...state,title:{...state.title,text:action.text}}
+            }
+        }
+        setTimeout(function () {
+            /*  state={
+                 title:{color:"red",text:"标题2"},
+                 content:{color:"blue",text:"内容"}
+             } */
+            dispatch({
+                type: "CHANGE_TITLE",
+                text: "标题2"
+            })
+            renderApp();
+        }, 1000)
+    </script>
+</body>
+
+</html>
