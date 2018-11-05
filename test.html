@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-     div{
-        width: 100%;
-        height: 150px;
-        background: red
-    }
-    </style>
+
 </head>
+
 <body>
-    <div>
-        <p>123</p>
-    </div>
+
 </body>
+
 </html>
+<script>
+    let ary = [{
+        a: 1,
+        b: 2
+    }, {
+        a: 1,
+        b: 3
+    }, {
+        a: 1,
+        b: 4
+    }, {
+        a: 1,
+        b: 2
+    }];
+    let c = [];
+
+    for (let i = 0; i < ary.length; i++) {
+        // c = ary[i];
+        // console.log(ary[i].a)
+        // console.log(ary[i].b)
+        for (let j = 0; j < ary.length; j++) {
+            if (i !== j) {
+                if (ary[i].a == ary[j].a) {
+                    if (ary[i].b == ary[j].b) {
+                        c.push(ary[i])
+                        // c.pop()
+                        console.log(i)
+                         console.log(c)
+                    }
+                }
+            }
+
+        }
+
+    }
+    // console.log(ary)
+</script>
