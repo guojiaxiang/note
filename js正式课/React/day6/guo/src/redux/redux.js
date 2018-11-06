@@ -23,3 +23,4 @@ function createStore(reducer){
         dispatch
     }
 }
+export {createStore}
